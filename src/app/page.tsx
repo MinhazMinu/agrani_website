@@ -36,12 +36,19 @@ export default function Home() {
 
             <Reveal delay={0.12}>
               <div className="relative">
-                <div className="absolute -inset-4 rounded-[2rem] bg-brand-orange/10 blur-3xl" />
-                <div className="relative rounded-lg border border-white/70 bg-white/80 p-6 shadow-2xl backdrop-blur">
-                  <Image src="/logo.jpg" alt="Agrani Technologies & Services Limited logo" width={540} height={176} className="w-full rounded bg-white" priority />
+                <div className="absolute -inset-6 rounded-[2rem] bg-[radial-gradient(circle_at_20%_20%,rgba(241,90,36,0.24),transparent_34%),radial-gradient(circle_at_80%_70%,rgba(37,150,190,0.22),transparent_32%)] blur-3xl" />
+                <div className="ai-hero-card relative overflow-hidden rounded-lg bg-white/85 p-6 shadow-2xl backdrop-blur">
+                  <span className="ai-scan-line" aria-hidden="true" />
+                  <span className="ai-node ai-node-one" aria-hidden="true" />
+                  <span className="ai-node ai-node-two" aria-hidden="true" />
+                  <span className="ai-node ai-node-three" aria-hidden="true" />
+                  <div className="relative rounded-lg border border-white/70 bg-white/90 p-3 shadow-sm">
+                    <Image src="/logo.jpg" alt="Agrani Technologies & Services Limited logo" width={540} height={176} className="w-full rounded bg-white" priority />
+                  </div>
                   <div className="mt-8 grid gap-4 sm:grid-cols-2">
                     {["Software", "Cloud", "Cybersecurity", "E-Governance"].map((item) => (
-                      <div key={item} className="rounded-lg border border-neutral-200 bg-white p-4">
+                      <div key={item} className="group relative overflow-hidden rounded-lg border border-neutral-200 bg-white/90 p-4 shadow-sm transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-lg">
+                        <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/60 to-transparent opacity-0 transition group-hover:opacity-100" />
                         <CheckCircle2 className="h-5 w-5 text-brand-orange" />
                         <p className="mt-3 text-sm font-semibold text-neutral-900">{item}</p>
                       </div>
