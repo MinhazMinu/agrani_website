@@ -183,16 +183,16 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        <section className="expertise-stack relative overflow-hidden py-24">
-          <Container>
-            <Reveal className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">Technology stack</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal text-neutral-950 sm:text-4xl">Platforms and technologies used by Agrani</h2>
+        <section className="expertise-stack relative overflow-hidden py-16 sm:py-20">
+          <Container className="relative z-10">
+            <Reveal className="max-w-4xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">Technological expertise</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal text-neutral-950 sm:text-4xl">We work with a wide range of technologies and platforms including:</h2>
               <p className="mt-4 text-base leading-7 text-neutral-600">
-                Grouped technology capabilities across application engineering, data, cloud operations, DevOps, and security.
+                Grouped display with icons across languages, frameworks, databases, cloud, DevOps, security, and other core platforms.
               </p>
             </Reveal>
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {technologyGroups.map((group, index) => {
                 const Icon = group.icon;
                 return (
