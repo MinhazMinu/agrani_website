@@ -13,9 +13,9 @@ export default function Home() {
     <>
       <main>
         <section className="relative overflow-hidden bg-[radial-gradient(circle_at_15%_15%,rgba(241,90,36,0.14),transparent_30%),linear-gradient(135deg,#ffffff_0%,#f7fbfc_52%,#fff5f1_100%)]">
-          <Container className="grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+          <Container className="grid gap-12 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <Reveal>
-              <p className="inline-flex items-center gap-2 rounded-full border border-brand-orange/20 bg-white/70 px-4 py-2 text-sm font-semibold text-brand-orange shadow-sm">
+              <p className="inline-flex items-center gap-2 rounded-full border border-brand-orange/25 bg-brand-orange/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
                 <Sparkles size={16} /> Since 2013
               </p>
               <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-normal text-neutral-950 sm:text-5xl lg:text-6xl">
