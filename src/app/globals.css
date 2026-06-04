@@ -993,6 +993,64 @@ a {
   animation: service-card-rise 700ms both;
 }
 
+.service-stack-list {
+  display: block;
+  padding-bottom: 0.9rem;
+}
+
+.service-stack-card {
+  position: relative;
+  min-height: 6.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  background: #0a0a0a;
+  padding: 1.5rem;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.24);
+  outline: none;
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease,
+    filter 220ms ease,
+    opacity 220ms ease;
+  will-change: height;
+}
+
+.service-stack-card + .service-stack-card {
+  margin-top: -0.9rem;
+}
+
+.service-stack-list:hover .service-stack-card:not(:hover):not(:focus-within) {
+  filter: saturate(0.82);
+  opacity: 0.72;
+}
+
+.service-stack-card.is-active {
+  margin-bottom: 0.55rem;
+  border-color: rgba(241, 90, 36, 0.55);
+  background: #121818;
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.38),
+    0 0 42px rgba(37, 150, 190, 0.14);
+}
+
+.service-stack-card:focus-visible {
+  border-color: rgba(37, 150, 190, 0.75);
+  box-shadow:
+    0 0 0 3px rgba(37, 150, 190, 0.2),
+    0 26px 70px rgba(0, 0, 0, 0.38);
+}
+
+.service-stack-card-content {
+  overflow: hidden;
+}
+
+.service-stack-kicker {
+  display: block;
+  min-height: 1rem;
+}
+
 .service-stack-item-1 {
   --rise-delay: 80ms;
 }

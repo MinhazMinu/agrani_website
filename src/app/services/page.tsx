@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { CtaBanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
+import { ServiceStack } from "@/components/service-stack";
 import { serviceDetails } from "@/lib/company";
 
 export const metadata = {
@@ -89,35 +90,9 @@ export default function ServicesPage() {
                 </div>
               </Reveal>
 
-              <div className="service-stack-stage">
-                {serviceDetails.map((service, index) => {
-                  const Icon = service.icon;
-                  return (
-                    <Reveal key={service.title} delay={index * 0.04} className={`service-stack-item service-stack-item-${index + 1}`}>
-                      <article className="service-detail-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-neutral-950 p-6 shadow-2xl shadow-black/20 transition hover:border-brand-orange/45">
-                        <div className="relative flex items-start gap-4">
-                          <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:bg-brand-orange group-hover:text-white">
-                            <Icon size={26} />
-                          </span>
-                          <div>
-                            <h2 className="service-card-title text-lg font-semibold text-white">{service.title}</h2>
-                            <p className="service-card-kicker mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange-light">Service line</p>
-                          </div>
-                      </div>
-                        <ul className="relative mt-6 grid gap-3">
-                          {service.items.map((item) => (
-                            <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-300">
-                              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-cyan" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-
-                      </article>
-                    </Reveal>
-                  );
-                })}
-              </div>
+              <Reveal>
+                <ServiceStack />
+              </Reveal>
             </div>
           </Container>
         </section>
