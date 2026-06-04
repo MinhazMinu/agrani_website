@@ -110,8 +110,9 @@ export default function Home() {
                       <span className="absolute right-4 top-3 text-xl font-semibold leading-none text-white/[0.04]">
                         0{index + 1}
                       </span>
-                      <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:scale-105 group-hover:text-brand-orange">
-                        <Icon size={22} />
+                      <span className="serve-icon relative inline-flex h-16 w-16 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:scale-105 group-hover:text-brand-orange">
+                        <span className="serve-icon-orbit" aria-hidden="true" />
+                        <Icon className="relative h-7 w-7 transition group-hover:-rotate-6 group-hover:scale-110" />
                       </span>
                       <p className="relative mt-7 text-xl font-semibold text-white">{sector.label}</p>
                       {/* <div className="relative mt-4 h-1.5 overflow-hidden rounded-full bg-white/10">
