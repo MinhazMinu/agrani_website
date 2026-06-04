@@ -985,36 +985,40 @@ a {
   gap: 1.25rem;
 }
 
+.service-portfolio-copy {
+  position: relative;
+}
+
 .service-stack-item {
   animation: service-card-rise 700ms both;
 }
 
 .service-stack-item-1 {
-  animation-delay: 80ms;
+  --rise-delay: 80ms;
 }
 
 .service-stack-item-2 {
-  animation-delay: 180ms;
+  --rise-delay: 180ms;
 }
 
 .service-stack-item-3 {
-  animation-delay: 280ms;
+  --rise-delay: 280ms;
 }
 
 .service-stack-item-4 {
-  animation-delay: 380ms;
+  --rise-delay: 380ms;
 }
 
 .service-stack-item-5 {
-  animation-delay: 480ms;
+  --rise-delay: 480ms;
 }
 
 .service-stack-item-6 {
-  animation-delay: 580ms;
+  --rise-delay: 580ms;
 }
 
 .service-stack-item-7 {
-  animation-delay: 680ms;
+  --rise-delay: 680ms;
 }
 
 .services-grid-section {
@@ -1072,20 +1076,81 @@ a {
   }
 }
 
+@keyframes service-card-auto-card {
+  0%,
+  13% {
+    min-height: 360px;
+    border-color: rgba(241, 90, 36, 0.55);
+    background: rgba(24, 28, 28, 0.98);
+    box-shadow:
+      0 34px 90px rgba(0, 0, 0, 0.42),
+      0 0 46px rgba(37, 150, 190, 0.16);
+  }
+
+  17%,
+  100% {
+    min-height: 128px;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes service-card-auto-content {
+  0%,
+  13% {
+    margin-top: 1.5rem;
+    max-height: 460px;
+    opacity: 1;
+  }
+
+  17%,
+  100% {
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes service-card-auto-z {
+  0%,
+  13% {
+    z-index: 80;
+    opacity: 1;
+  }
+
+  17%,
+  100% {
+    z-index: var(--stack-z);
+    opacity: 0.92;
+  }
+}
+
 @media (min-width: 1024px) {
+  .service-portfolio-copy {
+    position: sticky;
+    top: 7rem;
+  }
+
   .service-stack-stage {
     position: relative;
     display: grid;
-    max-width: 880px;
+    gap: 0;
+    width: 100%;
+    max-width: none;
     perspective: 1200px;
   }
 
   .service-stack-item {
     --stack-z: 1;
     position: relative;
-    margin-top: -18px;
+    margin-top: -58px;
     z-index: var(--stack-z);
     transform: translateY(0);
+    animation:
+      service-card-rise 700ms both,
+      service-card-auto-z 21s steps(1, end) infinite;
+    animation-delay: var(--rise-delay), var(--cycle-delay);
     transition:
       filter 260ms ease,
       opacity 260ms ease,
@@ -1099,34 +1164,44 @@ a {
 
   .service-stack-item-1 {
     --stack-z: 1;
+    --cycle-delay: 0s;
   }
 
   .service-stack-item-2 {
     --stack-z: 2;
+    --cycle-delay: 3s;
   }
 
   .service-stack-item-3 {
     --stack-z: 3;
+    --cycle-delay: 6s;
   }
 
   .service-stack-item-4 {
     --stack-z: 4;
+    --cycle-delay: 9s;
   }
 
   .service-stack-item-5 {
     --stack-z: 5;
+    --cycle-delay: 12s;
   }
 
   .service-stack-item-6 {
     --stack-z: 6;
+    --cycle-delay: 15s;
   }
 
   .service-stack-item-7 {
     --stack-z: 7;
+    --cycle-delay: 18s;
   }
 
   .service-stack-item .service-detail-card {
-    min-height: 132px;
+    min-height: 128px;
+    padding-bottom: 2rem;
+    animation: service-card-auto-card 21s ease-in-out infinite;
+    animation-delay: var(--cycle-delay);
     transition:
       background 260ms ease,
       border-color 260ms ease,
@@ -1135,7 +1210,10 @@ a {
   }
 
   .service-stack-item .service-detail-card ul,
-  .service-stack-item .service-detail-card .service-meter {
+  .service-stack-item .service-detail-card .service-meter,
+  .service-stack-item .service-card-kicker {
+    animation: service-card-auto-content 21s ease-in-out infinite;
+    animation-delay: var(--cycle-delay);
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -1149,6 +1227,15 @@ a {
     margin-top: 0;
   }
 
+  .service-stack-item .service-card-kicker {
+    display: block;
+  }
+
+  .service-stack-item .service-card-title {
+    font-size: clamp(1.35rem, 2.2vw, 2.05rem);
+    line-height: 1.1;
+  }
+
   .service-stack-item .service-detail-card > div:last-child {
     margin-top: 0;
   }
@@ -1158,10 +1245,18 @@ a {
     opacity: 0.62;
   }
 
+  .service-stack-stage:hover .service-stack-item,
+  .service-stack-stage:hover .service-detail-card,
+  .service-stack-stage:hover .service-detail-card ul,
+  .service-stack-stage:hover .service-detail-card .service-meter,
+  .service-stack-stage:hover .service-card-kicker {
+    animation-play-state: paused;
+  }
+
   .service-stack-stage .service-stack-item:hover {
     filter: none;
     opacity: 1;
-    transform: translateX(28px) scale(1.015);
+    transform: translateX(-18px) translateY(-10px) scale(1.015);
     transition:
       filter 220ms ease,
       opacity 220ms ease,
@@ -1170,7 +1265,7 @@ a {
   }
 
   .service-stack-stage .service-stack-item:hover .service-detail-card {
-    min-height: 320px;
+    min-height: 360px;
   }
 
   .service-stack-stage .service-stack-item:hover .service-detail-card ul {
@@ -1185,6 +1280,12 @@ a {
     opacity: 1;
   }
 
+  .service-stack-stage .service-stack-item:hover .service-card-kicker {
+    margin-top: 0.25rem;
+    max-height: 1rem;
+    opacity: 1;
+  }
+
   .service-stack-stage .service-stack-item:hover .service-detail-card {
     border-color: rgba(241, 90, 36, 0.55);
     box-shadow:
@@ -1195,6 +1296,6 @@ a {
 
 @media (min-width: 1024px) and (max-width: 1279px) {
   .service-stack-stage {
-    max-width: 760px;
+    max-width: none;
   }
 }

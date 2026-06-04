@@ -55,43 +55,58 @@ export default function ServicesPage() {
 
         <section className="services-grid-section relative overflow-hidden py-20 text-white">
           <Container className="relative z-10">
-            <Reveal className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">Service portfolio</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal text-white sm:text-4xl">Built to deliver, integrate, secure, and operate digital platforms</h2>
-              <p className="mt-4 text-base leading-7 text-neutral-300">
-                Each service line is structured for practical delivery across strategy, implementation, support, and continuous improvement.
-              </p>
-            </Reveal>
-            <div className="service-stack-stage mt-10">
-              {serviceDetails.map((service, index) => {
-                const Icon = service.icon;
-                return (
-                  <Reveal key={service.title} delay={index * 0.04} className={`service-stack-item service-stack-item-${index + 1}`}>
-                    <article className="service-detail-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-black/20 backdrop-blur transition hover:border-brand-orange/45 hover:bg-white/[0.1]">
-                      <div className="relative flex items-start gap-4">
-                        <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:bg-brand-orange group-hover:text-white">
+            <div className="service-portfolio-layout grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+              <Reveal className="service-portfolio-copy">
+                <div className="rounded-lg border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-black/20 backdrop-blur sm:p-8">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">Service portfolio</p>
+                  <h2 className="mt-3 text-3xl font-semibold tracking-normal text-white sm:text-4xl">Built to deliver, integrate, secure, and operate digital platforms</h2>
+                  <p className="mt-4 text-base leading-7 text-neutral-300">
+                    Each service line is structured for practical delivery across strategy, implementation, support, and continuous improvement.
+                  </p>
+                  <div className="mt-8 grid grid-cols-2 gap-3">
+                    <div className="rounded-lg border border-white/10 bg-neutral-950/50 p-4">
+                      <p className="text-4xl font-semibold text-brand-orange-light">7</p>
+                      <p className="mt-1 text-sm text-neutral-400">Service lines</p>
+                    </div>
+                    <div className="rounded-lg border border-white/10 bg-neutral-950/50 p-4">
+                      <p className="text-4xl font-semibold text-brand-cyan">4</p>
+                      <p className="mt-1 text-sm text-neutral-400">Delivery stages</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              <div className="service-stack-stage">
+                {serviceDetails.map((service, index) => {
+                  const Icon = service.icon;
+                  return (
+                    <Reveal key={service.title} delay={index * 0.04} className={`service-stack-item service-stack-item-${index + 1}`}>
+                      <article className="service-detail-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-black/20 backdrop-blur transition hover:border-brand-orange/45 hover:bg-white/[0.1]">
+                        <div className="relative flex items-start gap-4">
+                          <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:bg-brand-orange group-hover:text-white">
                           <Icon size={26} />
                         </span>
                         <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange-light">0{index + 1}</p>
-                          <h2 className="mt-1 text-xl font-semibold text-white">{service.title}</h2>
+                          <h2 className="service-card-title text-xl font-semibold text-white">{service.title}</h2>
+                          <p className="service-card-kicker mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange-light">Service line</p>
                         </div>
                       </div>
-                      <ul className="relative mt-6 grid gap-3">
-                        {service.items.map((item) => (
-                          <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-300">
-                            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-cyan" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="relative mt-6 h-1 overflow-hidden rounded-full bg-white/10">
-                        <span className="service-meter block h-full rounded-full bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-cyan" />
-                      </div>
-                    </article>
-                  </Reveal>
-                );
-              })}
+                        <ul className="relative mt-6 grid gap-3">
+                          {service.items.map((item) => (
+                            <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-300">
+                              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-cyan" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="relative mt-6 h-1 overflow-hidden rounded-full bg-white/10">
+                          <span className="service-meter block h-full rounded-full bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-cyan" />
+                        </div>
+                      </article>
+                    </Reveal>
+                  );
+                })}
+              </div>
             </div>
             <Reveal delay={0.08}>
               <div className="services-process mt-10 grid gap-4 rounded-lg border border-white/10 bg-white/[0.07] p-4 shadow-2xl shadow-black/20 backdrop-blur sm:grid-cols-4">
