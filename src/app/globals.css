@@ -1079,7 +1079,7 @@ a {
 @keyframes service-card-auto-card {
   0%,
   13% {
-    min-height: 360px;
+    height: 360px;
     border-color: rgba(241, 90, 36, 0.55);
     background: rgba(24, 28, 28, 0.98);
     box-shadow:
@@ -1089,7 +1089,7 @@ a {
 
   17%,
   100% {
-    min-height: 128px;
+    height: 128px;
     border-color: rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.07);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
@@ -1134,8 +1134,9 @@ a {
 
   .service-stack-stage {
     position: relative;
-    display: grid;
+    display: block;
     gap: 0;
+    min-height: 900px;
     width: 100%;
     max-width: none;
     perspective: 1200px;
@@ -1143,8 +1144,12 @@ a {
 
   .service-stack-item {
     --stack-z: 1;
-    position: relative;
-    margin-top: -58px;
+    --stack-y: 0px;
+    left: 0;
+    margin-top: 0;
+    position: absolute;
+    right: 0;
+    top: var(--stack-y);
     z-index: var(--stack-z);
     transform: translateY(0);
     animation:
@@ -1164,41 +1169,49 @@ a {
 
   .service-stack-item-1 {
     --stack-z: 1;
+    --stack-y: 0px;
     --cycle-delay: 0s;
   }
 
   .service-stack-item-2 {
     --stack-z: 2;
+    --stack-y: 88px;
     --cycle-delay: 3s;
   }
 
   .service-stack-item-3 {
     --stack-z: 3;
+    --stack-y: 176px;
     --cycle-delay: 6s;
   }
 
   .service-stack-item-4 {
     --stack-z: 4;
+    --stack-y: 264px;
     --cycle-delay: 9s;
   }
 
   .service-stack-item-5 {
     --stack-z: 5;
+    --stack-y: 352px;
     --cycle-delay: 12s;
   }
 
   .service-stack-item-6 {
     --stack-z: 6;
+    --stack-y: 440px;
     --cycle-delay: 15s;
   }
 
   .service-stack-item-7 {
     --stack-z: 7;
+    --stack-y: 528px;
     --cycle-delay: 18s;
   }
 
   .service-stack-item .service-detail-card {
-    min-height: 128px;
+    height: 128px;
+    min-height: 0;
     padding-bottom: 2rem;
     animation: service-card-auto-card 21s ease-in-out infinite;
     animation-delay: var(--cycle-delay);
@@ -1206,7 +1219,7 @@ a {
       background 260ms ease,
       border-color 260ms ease,
       box-shadow 260ms ease,
-      min-height 320ms ease;
+      height 320ms ease;
   }
 
   .service-stack-item .service-detail-card ul,
@@ -1232,7 +1245,7 @@ a {
   }
 
   .service-stack-item .service-card-title {
-    font-size: clamp(1.35rem, 2.2vw, 2.05rem);
+    font-size: clamp(1.1rem, 1.45vw, 1.45rem);
     line-height: 1.1;
   }
 
@@ -1265,7 +1278,8 @@ a {
   }
 
   .service-stack-stage .service-stack-item:hover .service-detail-card {
-    min-height: 360px;
+    height: 360px;
+    min-height: 0;
   }
 
   .service-stack-stage .service-stack-item:hover .service-detail-card ul {

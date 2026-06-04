@@ -73,6 +73,19 @@ export default function ServicesPage() {
                       <p className="mt-1 text-sm text-neutral-400">Delivery stages</p>
                     </div>
                   </div>
+                  <div className="services-process mt-6 grid gap-3 rounded-lg border border-white/10 bg-white/[0.07] p-3 shadow-2xl shadow-black/20 backdrop-blur sm:grid-cols-2">
+                    {["Plan", "Build", "Integrate", "Operate"].map((step, index) => (
+                      <div key={step} className="flex items-center gap-3 rounded-lg border border-white/10 bg-neutral-950/50 p-3">
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-orange text-white">
+                          {index === 0 ? <Layers3 className="h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
+                        </span>
+                        <div>
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-orange-light">Step {index + 1}</p>
+                          <p className="text-sm font-semibold text-white">{step}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </Reveal>
 
@@ -84,12 +97,12 @@ export default function ServicesPage() {
                       <article className="service-detail-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-black/20 backdrop-blur transition hover:border-brand-orange/45 hover:bg-white/[0.1]">
                         <div className="relative flex items-start gap-4">
                           <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:bg-brand-orange group-hover:text-white">
-                          <Icon size={26} />
-                        </span>
-                        <div>
-                          <h2 className="service-card-title text-xl font-semibold text-white">{service.title}</h2>
-                          <p className="service-card-kicker mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange-light">Service line</p>
-                        </div>
+                            <Icon size={26} />
+                          </span>
+                          <div>
+                            <h2 className="service-card-title text-lg font-semibold text-white">{service.title}</h2>
+                            <p className="service-card-kicker mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange-light">Service line</p>
+                          </div>
                       </div>
                         <ul className="relative mt-6 grid gap-3">
                           {service.items.map((item) => (
@@ -108,21 +121,6 @@ export default function ServicesPage() {
                 })}
               </div>
             </div>
-            <Reveal delay={0.08}>
-              <div className="services-process mt-10 grid gap-4 rounded-lg border border-white/10 bg-white/[0.07] p-4 shadow-2xl shadow-black/20 backdrop-blur sm:grid-cols-4">
-                {["Plan", "Build", "Integrate", "Operate"].map((step, index) => (
-                  <div key={step} className="flex items-center gap-3 rounded-lg border border-white/10 bg-neutral-950/50 p-4">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange text-white">
-                      {index === 0 ? <Layers3 className="h-5 w-5" /> : <CheckCircle2 className="h-5 w-5" />}
-                    </span>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange-light">Step {index + 1}</p>
-                      <p className="font-semibold text-white">{step}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
           </Container>
         </section>
       </main>
