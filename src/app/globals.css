@@ -850,3 +850,149 @@ a {
     opacity: 1;
   }
 }
+
+.about-hero,
+.services-hero {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(241, 90, 36, 0.18), transparent 30%),
+    radial-gradient(circle at 84% 72%, rgba(37, 150, 190, 0.18), transparent 32%),
+    linear-gradient(135deg, #fff7f3 0%, #ffffff 48%, #eef9fb 100%);
+}
+
+.about-hero::before,
+.services-hero::before,
+.about-vision::before,
+.about-values::before,
+.about-team::before,
+.services-grid-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(48, 48, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 48, 48, 0.04) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+}
+
+.about-hero-card,
+.services-console {
+  isolation: isolate;
+}
+
+.about-hero-card::before,
+.services-console::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.4), transparent 38%, rgba(37, 150, 190, 0.45));
+}
+
+.about-scan,
+.services-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 0%, rgba(37, 150, 190, 0.14) 44%, transparent 58%);
+  transform: translateX(-120%);
+  animation: expertise-scan 6s ease-in-out infinite;
+}
+
+.about-vision,
+.about-team,
+.services-grid-section {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(37, 150, 190, 0.1), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.about-values {
+  background:
+    radial-gradient(circle at 10% 18%, rgba(241, 90, 36, 0.12), transparent 30%),
+    radial-gradient(circle at 88% 78%, rgba(37, 150, 190, 0.12), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f3fbfd 100%);
+}
+
+.about-statement,
+.about-value-card,
+.about-team-card,
+.service-detail-card,
+.services-process {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-statement::before,
+.about-value-card::before,
+.about-team-card::before,
+.service-detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.08), transparent 42%, rgba(37, 150, 190, 0.08));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.about-statement:hover::before,
+.about-value-card:hover::before,
+.about-team-card:hover::before,
+.service-detail-card:hover::before {
+  opacity: 1;
+}
+
+.about-statement > *,
+.about-value-card > *,
+.about-team-card > *,
+.service-detail-card > * {
+  position: relative;
+}
+
+.about-statement-primary {
+  box-shadow:
+    0 24px 70px rgba(241, 90, 36, 0.08),
+    0 16px 42px rgba(37, 150, 190, 0.08);
+}
+
+.service-detail-card {
+  isolation: isolate;
+}
+
+.service-detail-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 0%, rgba(37, 150, 190, 0.1) 45%, transparent 58%);
+  transform: translateX(-120%);
+  transition: transform 700ms ease;
+}
+
+.service-detail-card:hover::after {
+  transform: translateX(120%);
+}
+
+.service-meter {
+  width: 46%;
+  animation: service-meter 4.2s ease-in-out infinite;
+}
+
+.services-grid-section {
+  background:
+    radial-gradient(circle at 10% 12%, rgba(241, 90, 36, 0.1), transparent 30%),
+    radial-gradient(circle at 88% 82%, rgba(37, 150, 190, 0.12), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+}
+
+@keyframes service-meter {
+  0%,
+  100% {
+    width: 34%;
+    opacity: 0.68;
+  }
+
+  50% {
+    width: 88%;
+    opacity: 1;
+  }
+}
