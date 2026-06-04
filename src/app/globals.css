@@ -1128,8 +1128,8 @@ a {
 
 @media (min-width: 1024px) {
   .service-portfolio-copy {
-    position: sticky;
-    top: 7rem;
+    position: relative;
+    top: 0;
   }
 
   .service-stack-stage {
