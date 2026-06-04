@@ -73,21 +73,21 @@ export default function ExpertisePage() {
   return (
     <>
       <main>
-        <section className="expertise-hero relative overflow-hidden bg-neutral-950 py-20 text-white sm:py-24">
+        <section className="expertise-hero relative overflow-hidden py-20 sm:py-24">
           <Container className="relative grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <Reveal>
-              <p className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">
+              <p className="inline-flex items-center gap-2 rounded-full border border-brand-orange/25 bg-brand-orange/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
                 <Sparkles className="h-4 w-4" /> Our expertise
               </p>
-              <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-normal sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-normal text-neutral-950 sm:text-5xl lg:text-6xl">
                 A 100+ professional team across software, infrastructure, security, and support.
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-600">
                 Agrani&apos;s greatest asset is its people. Staff members undergo continuous training and certification programs to keep pace with evolving global standards and technologies.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {["Software", "Infrastructure", "Security", "Support"].map((item) => (
-                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-neutral-200">
+                  <span key={item} className="rounded-full border border-brand-cyan/20 bg-white/80 px-4 py-2 text-sm font-semibold text-neutral-800 shadow-sm">
                     {item}
                   </span>
                 ))}
@@ -95,14 +95,14 @@ export default function ExpertisePage() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="expertise-console relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/30 backdrop-blur">
+              <div className="expertise-console relative overflow-hidden rounded-lg border border-white/70 bg-white/85 p-6 shadow-2xl shadow-brand-cyan/10 backdrop-blur">
                 <span className="expertise-console-scan" aria-hidden="true" />
-                <div className="relative flex items-center justify-between gap-5 border-b border-white/10 pb-5">
+                <div className="relative flex items-center justify-between gap-5 border-b border-neutral-200 pb-5">
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-400">Capability index</p>
-                    <p className="mt-2 text-5xl font-semibold text-brand-orange-light">100+</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-cyan">Capability index</p>
+                    <p className="mt-2 text-5xl font-semibold text-brand-orange">100+</p>
                   </div>
-                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-xl shadow-brand-cyan/10">
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-brand-cyan text-white shadow-xl shadow-brand-cyan/20">
                     <Users className="h-7 w-7" />
                   </span>
                 </div>
@@ -112,9 +112,9 @@ export default function ExpertisePage() {
                     { label: "Technology groups", value: "7" },
                     { label: "Operations coverage", value: "24/7" },
                   ].map((item) => (
-                    <div key={item.label} className="flex items-center justify-between rounded-lg border border-white/10 bg-neutral-950/50 px-4 py-3">
-                      <span className="text-sm font-medium text-neutral-300">{item.label}</span>
-                      <span className="text-lg font-semibold text-white">{item.value}</span>
+                    <div key={item.label} className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white/80 px-4 py-3 shadow-sm">
+                      <span className="text-sm font-medium text-neutral-600">{item.label}</span>
+                      <span className="text-lg font-semibold text-neutral-950">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -183,12 +183,12 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        <section className="expertise-stack relative overflow-hidden bg-neutral-950 py-24 text-white">
+        <section className="expertise-stack relative overflow-hidden py-24">
           <Container>
             <Reveal className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">Technology stack</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-4xl">Platforms and technologies used by Agrani</h2>
-              <p className="mt-4 text-base leading-7 text-neutral-300">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">Technology stack</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal text-neutral-950 sm:text-4xl">Platforms and technologies used by Agrani</h2>
+              <p className="mt-4 text-base leading-7 text-neutral-600">
                 Grouped technology capabilities across application engineering, data, cloud operations, DevOps, and security.
               </p>
             </Reveal>
@@ -197,20 +197,20 @@ export default function ExpertisePage() {
                 const Icon = group.icon;
                 return (
                   <Reveal key={group.title} delay={index * 0.04}>
-                    <article className="expertise-tech-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/20 backdrop-blur transition hover:-translate-y-1 hover:border-brand-cyan/50">
+                    <article className="expertise-tech-card group relative h-full overflow-hidden rounded-lg border border-neutral-200 bg-white/85 p-6 shadow-xl shadow-brand-cyan/5 backdrop-blur transition hover:-translate-y-1 hover:border-brand-cyan/40 hover:shadow-2xl hover:shadow-brand-cyan/10">
                       <div className="relative flex items-center justify-between gap-4">
-                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white text-brand-cyan transition group-hover:text-brand-orange">
+                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-cyan/10 text-brand-cyan transition group-hover:bg-brand-orange group-hover:text-white">
                           <Icon className="h-6 w-6" />
                         </span>
-                        <Cpu className="h-5 w-5 text-white/20" />
+                        <Cpu className="h-5 w-5 text-brand-orange/35" />
                       </div>
-                      <h2 className="relative mt-5 text-xl font-semibold text-white">{group.title}</h2>
+                      <h2 className="relative mt-5 text-xl font-semibold text-neutral-950">{group.title}</h2>
                       <div className="relative mt-5 flex flex-wrap gap-2">
                         {group.items.map((item) => (
-                          <span key={item} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-sm font-medium text-neutral-200 transition group-hover:border-brand-orange/30">
+                          <span key={item} className="inline-flex items-center gap-2 rounded-full border border-brand-cyan/15 bg-brand-cyan/5 px-3 py-1.5 text-sm font-medium text-neutral-700 transition group-hover:border-brand-orange/30 group-hover:bg-brand-orange/5">
                             {(() => {
                               const TechIcon = techItemIcons[item] ?? Cpu;
-                              return <TechIcon className="h-3.5 w-3.5 text-brand-orange-light" />;
+                              return <TechIcon className="h-3.5 w-3.5 text-brand-orange" />;
                             })()}
                             {item}
                           </span>
