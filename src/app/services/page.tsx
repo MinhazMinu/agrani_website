@@ -94,7 +94,7 @@ export default function ServicesPage() {
                   const Icon = service.icon;
                   return (
                     <Reveal key={service.title} delay={index * 0.04} className={`service-stack-item service-stack-item-${index + 1}`}>
-                      <article className="service-detail-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-black/20 backdrop-blur transition hover:border-brand-orange/45 hover:bg-white/[0.1]">
+                      <article className="service-detail-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-neutral-950 p-6 shadow-2xl shadow-black/20 transition hover:border-brand-orange/45">
                         <div className="relative flex items-start gap-4">
                           <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:bg-brand-orange group-hover:text-white">
                             <Icon size={26} />
@@ -112,9 +112,7 @@ export default function ServicesPage() {
                             </li>
                           ))}
                         </ul>
-                        <div className="relative mt-6 h-1 overflow-hidden rounded-full bg-white/10">
-                          <span className="service-meter block h-full rounded-full bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-cyan" />
-                        </div>
+
                       </article>
                     </Reveal>
                   );

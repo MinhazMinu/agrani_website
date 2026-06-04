@@ -1081,7 +1081,7 @@ a {
   13% {
     height: 360px;
     border-color: rgba(241, 90, 36, 0.55);
-    background: rgba(24, 28, 28, 0.98);
+    background: #121818;
     box-shadow:
       0 34px 90px rgba(0, 0, 0, 0.42),
       0 0 46px rgba(37, 150, 190, 0.16);
@@ -1091,7 +1091,7 @@ a {
   100% {
     height: 128px;
     border-color: rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.07);
+    background: #0a0a0a;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
   }
 }
@@ -1258,12 +1258,26 @@ a {
     opacity: 0.62;
   }
 
-  .service-stack-stage:hover .service-stack-item,
-  .service-stack-stage:hover .service-detail-card,
+  .service-stack-stage:hover .service-stack-item {
+    animation: service-card-rise 700ms both;
+    animation-delay: var(--rise-delay);
+    z-index: var(--stack-z);
+  }
+
+  .service-stack-stage:hover .service-detail-card {
+    animation: none;
+    background: #0a0a0a;
+    height: 128px;
+    min-height: 0;
+  }
+
   .service-stack-stage:hover .service-detail-card ul,
   .service-stack-stage:hover .service-detail-card .service-meter,
   .service-stack-stage:hover .service-card-kicker {
-    animation-play-state: paused;
+    animation: none;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
   }
 
   .service-stack-stage .service-stack-item:hover {
@@ -1274,7 +1288,7 @@ a {
       filter 220ms ease,
       opacity 220ms ease,
       transform 220ms ease;
-    z-index: 40;
+    z-index: 90;
   }
 
   .service-stack-stage .service-stack-item:hover .service-detail-card {
@@ -1301,6 +1315,7 @@ a {
   }
 
   .service-stack-stage .service-stack-item:hover .service-detail-card {
+    background: #121818;
     border-color: rgba(241, 90, 36, 0.55);
     box-shadow:
       0 34px 90px rgba(0, 0, 0, 0.42),
