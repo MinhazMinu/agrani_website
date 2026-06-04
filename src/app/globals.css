@@ -863,8 +863,7 @@ a {
 .services-hero::before,
 .about-vision::before,
 .about-values::before,
-.about-team::before,
-.services-grid-section::before {
+.about-team::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -900,8 +899,7 @@ a {
 }
 
 .about-vision,
-.about-team,
-.services-grid-section {
+.about-team {
   background:
     radial-gradient(circle at 92% 12%, rgba(37, 150, 190, 0.1), transparent 30%),
     linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
@@ -930,7 +928,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(241, 90, 36, 0.08), transparent 42%, rgba(37, 150, 190, 0.08));
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.12), transparent 42%, rgba(37, 150, 190, 0.12));
   opacity: 0;
   transition: opacity 220ms ease;
 }
@@ -947,6 +945,7 @@ a {
 .about-team-card > *,
 .service-detail-card > * {
   position: relative;
+  z-index: 1;
 }
 
 .about-statement-primary {
@@ -959,11 +958,15 @@ a {
   isolation: isolate;
 }
 
+.service-detail-card::before {
+  z-index: 0;
+}
+
 .service-detail-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, transparent 0%, rgba(37, 150, 190, 0.1) 45%, transparent 58%);
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.09) 45%, transparent 58%);
   transform: translateX(-120%);
   transition: transform 700ms ease;
 }
@@ -979,9 +982,32 @@ a {
 
 .services-grid-section {
   background:
-    radial-gradient(circle at 10% 12%, rgba(241, 90, 36, 0.1), transparent 30%),
-    radial-gradient(circle at 88% 82%, rgba(37, 150, 190, 0.12), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+    radial-gradient(circle at 10% 12%, rgba(241, 90, 36, 0.24), transparent 30%),
+    radial-gradient(circle at 88% 82%, rgba(37, 150, 190, 0.24), transparent 34%),
+    linear-gradient(135deg, #1b0904 0%, #080808 42%, #071a20 100%);
+}
+
+.services-grid-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+.services-grid-section::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: 0;
+  height: 100%;
+  width: 34%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+  transform: skewX(-18deg);
+  animation: expertise-sweep 8s ease-in-out infinite;
 }
 
 @keyframes service-meter {

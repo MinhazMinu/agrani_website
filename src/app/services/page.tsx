@@ -53,39 +53,40 @@ export default function ServicesPage() {
           </Container>
         </section>
 
-        <section className="services-grid-section relative overflow-hidden py-20">
-          <Container className="relative">
+        <section className="services-grid-section relative overflow-hidden py-20 text-white">
+          <Container className="relative z-10">
             <Reveal className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">Service portfolio</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal text-neutral-950 sm:text-4xl">Built to deliver, integrate, secure, and operate digital platforms</h2>
-              <p className="mt-4 text-base leading-7 text-neutral-600">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">Service portfolio</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal text-white sm:text-4xl">Built to deliver, integrate, secure, and operate digital platforms</h2>
+              <p className="mt-4 text-base leading-7 text-neutral-300">
                 Each service line is structured for practical delivery across strategy, implementation, support, and continuous improvement.
               </p>
             </Reveal>
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <div className="mt-10 grid gap-5 lg:grid-cols-6">
               {serviceDetails.map((service, index) => {
                 const Icon = service.icon;
+                const featured = index === 0 || index === 6;
                 return (
                   <Reveal key={service.title} delay={index * 0.04}>
-                    <article className="service-detail-card group relative h-full overflow-hidden rounded-lg border border-neutral-200 bg-white/85 p-6 shadow-xl shadow-neutral-950/5 backdrop-blur transition hover:-translate-y-1 hover:border-brand-cyan/40 hover:shadow-2xl hover:shadow-brand-cyan/10">
+                    <article className={`service-detail-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-black/20 backdrop-blur transition hover:-translate-y-1 hover:border-brand-orange/45 hover:bg-white/[0.1] ${featured ? "lg:col-span-3" : "lg:col-span-2"}`}>
                       <div className="relative flex items-start gap-4">
-                        <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-brand-cyan/10 text-brand-cyan transition group-hover:bg-brand-orange group-hover:text-white">
+                        <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:bg-brand-orange group-hover:text-white">
                           <Icon size={26} />
                         </span>
                         <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">0{index + 1}</p>
-                          <h2 className="mt-1 text-xl font-semibold text-neutral-950">{service.title}</h2>
+                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange-light">0{index + 1}</p>
+                          <h2 className="mt-1 text-xl font-semibold text-white">{service.title}</h2>
                         </div>
                       </div>
                       <ul className="relative mt-6 grid gap-3">
                         {service.items.map((item) => (
-                          <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-600">
+                          <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-300">
                             <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-cyan" />
                             {item}
                           </li>
                         ))}
                       </ul>
-                      <div className="relative mt-6 h-1 overflow-hidden rounded-full bg-neutral-100">
+                      <div className="relative mt-6 h-1 overflow-hidden rounded-full bg-white/10">
                         <span className="service-meter block h-full rounded-full bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-cyan" />
                       </div>
                     </article>
@@ -94,15 +95,15 @@ export default function ServicesPage() {
               })}
             </div>
             <Reveal delay={0.08}>
-              <div className="services-process mt-10 grid gap-4 rounded-lg border border-neutral-200 bg-white/80 p-4 shadow-xl shadow-neutral-950/5 backdrop-blur sm:grid-cols-4">
+              <div className="services-process mt-10 grid gap-4 rounded-lg border border-white/10 bg-white/[0.07] p-4 shadow-2xl shadow-black/20 backdrop-blur sm:grid-cols-4">
                 {["Plan", "Build", "Integrate", "Operate"].map((step, index) => (
-                  <div key={step} className="flex items-center gap-3 rounded-lg bg-neutral-50 p-4">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-950 text-white">
+                  <div key={step} className="flex items-center gap-3 rounded-lg border border-white/10 bg-neutral-950/50 p-4">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange text-white">
                       {index === 0 ? <Layers3 className="h-5 w-5" /> : <CheckCircle2 className="h-5 w-5" />}
                     </span>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange">Step {index + 1}</p>
-                      <p className="font-semibold text-neutral-950">{step}</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange-light">Step {index + 1}</p>
+                      <p className="font-semibold text-white">{step}</p>
                     </div>
                   </div>
                 ))}
