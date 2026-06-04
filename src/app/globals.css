@@ -511,3 +511,260 @@ a {
     opacity: 1;
   }
 }
+
+.expertise-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(241, 90, 36, 0.22), transparent 30%),
+    radial-gradient(circle at 82% 72%, rgba(37, 150, 190, 0.2), transparent 32%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 54px 54px, 54px 54px;
+}
+
+.expertise-hero::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: 0;
+  height: 100%;
+  width: 34%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+  transform: skewX(-18deg);
+  animation: expertise-sweep 8s ease-in-out infinite;
+}
+
+.expertise-console {
+  isolation: isolate;
+}
+
+.expertise-console::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.45), transparent 40%, rgba(37, 150, 190, 0.45));
+}
+
+.expertise-console-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.1) 44%, transparent 58%);
+  transform: translateX(-120%);
+  animation: expertise-scan 5.8s ease-in-out infinite;
+}
+
+.expertise-roles {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(241, 90, 36, 0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+}
+
+.expertise-role-grid {
+  position: relative;
+}
+
+.expertise-role-grid::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(241, 90, 36, 0.35), rgba(37, 150, 190, 0.35), transparent);
+}
+
+.expertise-role-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.08), transparent 40%, rgba(37, 150, 190, 0.08));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.expertise-role-card:hover::before {
+  opacity: 1;
+}
+
+.expertise-role-card > * {
+  position: relative;
+}
+
+.expertise-role-meter {
+  width: 44%;
+  animation: expertise-meter 4s ease-in-out infinite;
+}
+
+.expertise-stack::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(241, 90, 36, 0.18), transparent 32%),
+    radial-gradient(circle at 88% 78%, rgba(37, 150, 190, 0.18), transparent 34%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, 50px 50px, 50px 50px;
+}
+
+.expertise-tech-card {
+  isolation: isolate;
+}
+
+.expertise-tech-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.4), transparent 34%, rgba(37, 150, 190, 0.42));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.expertise-tech-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.08) 45%, transparent 58%);
+  transform: translateX(-120%);
+  transition: transform 700ms ease;
+}
+
+.expertise-tech-card:hover::before {
+  opacity: 1;
+}
+
+.expertise-tech-card:hover::after {
+  transform: translateX(120%);
+}
+
+.expertise-tech-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-ops {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(37, 150, 190, 0.1), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.expertise-ops::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(48, 48, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 48, 48, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+}
+
+.expertise-facility {
+  position: relative;
+  overflow: hidden;
+}
+
+.expertise-facility::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.08), transparent 42%, rgba(37, 150, 190, 0.08));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.expertise-facility:hover::before {
+  opacity: 1;
+}
+
+.expertise-facility > * {
+  position: relative;
+}
+
+.expertise-proof-card {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(37, 150, 190, 0.1), transparent 28%),
+    #ffffff;
+}
+
+.expertise-csr-card {
+  isolation: isolate;
+}
+
+.expertise-csr-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 16% 14%, rgba(241, 90, 36, 0.22), transparent 32%),
+    radial-gradient(circle at 88% 82%, rgba(37, 150, 190, 0.2), transparent 34%);
+}
+
+.expertise-csr-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.09) 44%, transparent 58%);
+  transform: translateX(-120%);
+  animation: expertise-scan 6.5s ease-in-out infinite;
+}
+
+@media (max-width: 1023px) {
+  .expertise-role-grid::before {
+    display: none;
+  }
+}
+
+@keyframes expertise-sweep {
+  0%,
+  32% {
+    opacity: 0;
+    transform: translateX(0) skewX(-18deg);
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(360%) skewX(-18deg);
+  }
+}
+
+@keyframes expertise-scan {
+  0%,
+  28% {
+    opacity: 0;
+    transform: translateX(-120%);
+  }
+
+  52% {
+    opacity: 1;
+  }
+
+  84%,
+  100% {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+}
+
+@keyframes expertise-meter {
+  0%,
+  100% {
+    width: 36%;
+    opacity: 0.65;
+  }
+
+  50% {
+    width: 88%;
+    opacity: 1;
+  }
+}

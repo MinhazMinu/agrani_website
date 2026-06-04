@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { Award, CheckCircle2, ChevronRight, Cpu, Network, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { Container } from "@/components/container";
 import { CtaBanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
@@ -13,27 +13,73 @@ export default function ExpertisePage() {
   return (
     <>
       <main>
-        <section className="bg-neutral-950 py-20 text-white">
-          <Container>
+        <section className="expertise-hero relative overflow-hidden bg-neutral-950 py-20 text-white sm:py-24">
+          <Container className="relative grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <Reveal>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">Our expertise</p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-semibold sm:text-5xl">A 100+ professional team across software, infrastructure, security, and support.</h1>
+              <p className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">
+                <Sparkles className="h-4 w-4" /> Our expertise
+              </p>
+              <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-normal sm:text-5xl lg:text-6xl">
+                A 100+ professional team across software, infrastructure, security, and support.
+              </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-300">
                 Agrani&apos;s greatest asset is its people. Staff members undergo continuous training and certification programs to keep pace with evolving global standards and technologies.
               </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {["Software", "Infrastructure", "Security", "Support"].map((item) => (
+                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-neutral-200">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="expertise-console relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/30 backdrop-blur">
+                <span className="expertise-console-scan" aria-hidden="true" />
+                <div className="relative flex items-center justify-between gap-5 border-b border-white/10 pb-5">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-400">Capability index</p>
+                    <p className="mt-2 text-5xl font-semibold text-brand-orange-light">100+</p>
+                  </div>
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-xl shadow-brand-cyan/10">
+                    <Users className="h-7 w-7" />
+                  </span>
+                </div>
+                <div className="relative mt-6 grid gap-3">
+                  {[
+                    { label: "Technical roles", value: "7" },
+                    { label: "Technology groups", value: "7" },
+                    { label: "Operations coverage", value: "24/7" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center justify-between rounded-lg border border-white/10 bg-neutral-950/50 px-4 py-3">
+                      <span className="text-sm font-medium text-neutral-300">{item.label}</span>
+                      <span className="text-lg font-semibold text-white">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </Reveal>
           </Container>
         </section>
 
-        <section className="py-20">
+        <section className="expertise-roles relative overflow-hidden py-20">
           <Container>
             <SectionHeader eyebrow="Technical team" title="Roles that cover the full delivery lifecycle" />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="expertise-role-grid mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {teamRoles.map((role, index) => (
                 <Reveal key={role} delay={index * 0.03}>
-                  <div className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
-                    <CheckCircle2 className="h-5 w-5 text-brand-orange" />
-                    <p className="mt-3 font-semibold text-neutral-950">{role}</p>
+                  <div className="expertise-role-card group relative h-full overflow-hidden rounded-lg border border-neutral-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-xl">
+                    <span className="absolute right-4 top-4 text-4xl font-semibold text-neutral-950/[0.04]">
+                      0{index + 1}
+                    </span>
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-orange/10 text-brand-orange transition group-hover:bg-brand-orange group-hover:text-white">
+                      <CheckCircle2 className="h-5 w-5" />
+                    </span>
+                    <p className="mt-5 font-semibold text-neutral-950">{role}</p>
+                    <div className="mt-5 h-1 overflow-hidden rounded-full bg-neutral-100">
+                      <span className="expertise-role-meter block h-full rounded-full bg-gradient-to-r from-brand-orange to-brand-cyan" />
+                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -41,20 +87,31 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        <section className="bg-neutral-50 py-20">
+        <section className="expertise-stack relative overflow-hidden bg-neutral-950 py-24 text-white">
           <Container>
-            <SectionHeader eyebrow="Technology stack" title="Platforms and technologies used by Agrani" align="center" />
-            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">Technology stack</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-4xl">Platforms and technologies used by Agrani</h2>
+              <p className="mt-4 text-base leading-7 text-neutral-300">
+                Grouped technology capabilities across application engineering, data, cloud operations, DevOps, and security.
+              </p>
+            </Reveal>
+            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {technologyGroups.map((group, index) => {
                 const Icon = group.icon;
                 return (
                   <Reveal key={group.title} delay={index * 0.04}>
-                    <article className="h-full rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
-                      <Icon className="h-6 w-6 text-brand-cyan" />
-                      <h2 className="mt-4 text-lg font-semibold text-neutral-950">{group.title}</h2>
-                      <div className="mt-4 flex flex-wrap gap-2">
+                    <article className="expertise-tech-card group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/20 backdrop-blur transition hover:-translate-y-1 hover:border-brand-cyan/50">
+                      <div className="relative flex items-center justify-between gap-4">
+                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white text-brand-cyan transition group-hover:text-brand-orange">
+                          <Icon className="h-6 w-6" />
+                        </span>
+                        <Cpu className="h-5 w-5 text-white/20" />
+                      </div>
+                      <h2 className="relative mt-5 text-xl font-semibold text-white">{group.title}</h2>
+                      <div className="relative mt-5 flex flex-wrap gap-2">
                         {group.items.map((item) => (
-                          <span key={item} className="rounded-full bg-neutral-100 px-3 py-1.5 text-sm font-medium text-neutral-700">
+                          <span key={item} className="rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-sm font-medium text-neutral-200 transition group-hover:border-brand-orange/30">
                             {item}
                           </span>
                         ))}
@@ -67,7 +124,7 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        <section className="py-20">
+        <section className="expertise-ops relative overflow-hidden py-24">
           <Container className="grid gap-10 lg:grid-cols-2">
             <div>
               <SectionHeader eyebrow="Infrastructure & facilities" title="Delivery environment for reliable operations" />
@@ -76,8 +133,10 @@ export default function ExpertisePage() {
                   const Icon = item.icon;
                   return (
                     <Reveal key={item.title} delay={index * 0.04}>
-                      <div className="h-full rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
-                        <Icon className="h-6 w-6 text-brand-orange" />
+                      <div className="expertise-facility group h-full rounded-lg border border-neutral-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-xl">
+                        <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-orange/10 text-brand-orange transition group-hover:bg-brand-orange group-hover:text-white">
+                          <Icon className="h-5 w-5" />
+                        </span>
                         <h3 className="mt-4 font-semibold text-neutral-950">{item.title}</h3>
                         <p className="mt-2 text-sm leading-6 text-neutral-600">{item.description}</p>
                       </div>
@@ -88,12 +147,17 @@ export default function ExpertisePage() {
             </div>
             <div className="grid gap-6">
               <Reveal>
-                <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
-                  <h2 className="text-xl font-semibold text-neutral-950">Quality & Certifications</h2>
+                <div className="expertise-proof-card rounded-lg border border-neutral-200 bg-white p-6 shadow-xl shadow-neutral-950/5">
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-cyan/10 text-brand-cyan">
+                      <Award className="h-5 w-5" />
+                    </span>
+                    <h2 className="text-xl font-semibold text-neutral-950">Quality & Certifications</h2>
+                  </div>
                   <ul className="mt-5 space-y-3">
                     {quality.map((item) => (
                       <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-600">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-cyan" />
+                        <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-brand-cyan" />
                         {item}
                       </li>
                     ))}
@@ -101,12 +165,18 @@ export default function ExpertisePage() {
                 </div>
               </Reveal>
               <Reveal delay={0.08}>
-                <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
-                  <h2 className="text-xl font-semibold text-neutral-950">Corporate Social Responsibility</h2>
+                <div className="expertise-csr-card relative overflow-hidden rounded-lg border border-neutral-900 bg-neutral-950 p-6 text-white shadow-2xl shadow-neutral-950/15">
+                  <span className="expertise-csr-scan" aria-hidden="true" />
+                  <div className="relative flex items-center gap-3">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/10 text-brand-orange-light">
+                      <Network className="h-5 w-5" />
+                    </span>
+                    <h2 className="text-xl font-semibold">Corporate Social Responsibility</h2>
+                  </div>
                   <ul className="mt-5 space-y-3">
                     {csr.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-600">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-orange" />
+                      <li key={item} className="relative flex gap-3 text-sm leading-6 text-neutral-300">
+                        <ChevronRight className="mt-0.5 h-5 w-5 shrink-0 text-brand-orange-light" />
                         {item}
                       </li>
                     ))}
