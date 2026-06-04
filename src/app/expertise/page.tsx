@@ -1,4 +1,34 @@
-import { Award, ChevronRight, Cpu, Network, ShieldCheck, Sparkles, Users } from "lucide-react";
+import {
+  Award,
+  Binary,
+  Bot,
+  Boxes,
+  Braces,
+  ChevronRight,
+  Cloud,
+  Code2,
+  Coffee,
+  Container as ContainerIcon,
+  Cpu,
+  Database,
+  Flame,
+  GitBranch,
+  Globe,
+  KeyRound,
+  Layers3,
+  LockKeyhole,
+  Network,
+  Orbit,
+  Route,
+  Server,
+  Shield,
+  ShieldCheck,
+  Sparkles,
+  Terminal,
+  Users,
+  Workflow,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/container";
 import { CtaBanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
@@ -7,6 +37,36 @@ import { csr, infrastructure, quality, teamRoles, technologyGroups } from "@/lib
 
 export const metadata = {
   title: "Expertise | Agrani Technologies & Services Limited",
+};
+
+const techItemIcons: Record<string, LucideIcon> = {
+  Java: Coffee,
+  Python: Bot,
+  PHP: Code2,
+  JavaScript: Braces,
+  ".NET": Binary,
+  Laravel: Flame,
+  "Spring Boot": Workflow,
+  Angular: Orbit,
+  Django: Route,
+  MySQL: Database,
+  PostgreSQL: Server,
+  Oracle: Database,
+  MongoDB: Layers3,
+  AWS: Cloud,
+  Azure: Cloud,
+  GCP: Cloud,
+  Docker: ContainerIcon,
+  Jenkins: Terminal,
+  Git: GitBranch,
+  Kubernetes: Boxes,
+  SSL: LockKeyhole,
+  OAuth: KeyRound,
+  Firewalls: Shield,
+  "Pen Testing": ShieldCheck,
+  "REST APIs": Globe,
+  Microservices: Network,
+  "AI/ML (basic)": Cpu,
 };
 
 export default function ExpertisePage() {
@@ -147,7 +207,11 @@ export default function ExpertisePage() {
                       <h2 className="relative mt-5 text-xl font-semibold text-white">{group.title}</h2>
                       <div className="relative mt-5 flex flex-wrap gap-2">
                         {group.items.map((item) => (
-                          <span key={item} className="rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-sm font-medium text-neutral-200 transition group-hover:border-brand-orange/30">
+                          <span key={item} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-sm font-medium text-neutral-200 transition group-hover:border-brand-orange/30">
+                            {(() => {
+                              const TechIcon = techItemIcons[item] ?? Cpu;
+                              return <TechIcon className="h-3.5 w-3.5 text-brand-orange-light" />;
+                            })()}
                             {item}
                           </span>
                         ))}
