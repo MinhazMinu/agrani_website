@@ -1,4 +1,4 @@
-import { Award, CheckCircle2, ChevronRight, Cpu, Network, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { Award, ChevronRight, Cpu, Network, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { Container } from "@/components/container";
 import { CtaBanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
@@ -65,24 +65,60 @@ export default function ExpertisePage() {
 
         <section className="expertise-roles relative overflow-hidden py-20">
           <Container>
-            <SectionHeader eyebrow="Technical team" title="Roles that cover the full delivery lifecycle" />
-            <div className="expertise-role-grid mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {teamRoles.map((role, index) => (
-                <Reveal key={role} delay={index * 0.03}>
-                  <div className="expertise-role-card group relative h-full overflow-hidden rounded-lg border border-neutral-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-xl">
-                    <span className="absolute right-4 top-4 text-4xl font-semibold text-neutral-950/[0.04]">
-                      0{index + 1}
-                    </span>
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-orange/10 text-brand-orange transition group-hover:bg-brand-orange group-hover:text-white">
-                      <CheckCircle2 className="h-5 w-5" />
-                    </span>
-                    <p className="mt-5 font-semibold text-neutral-950">{role}</p>
-                    <div className="mt-5 h-1 overflow-hidden rounded-full bg-neutral-100">
-                      <span className="expertise-role-meter block h-full rounded-full bg-gradient-to-r from-brand-orange to-brand-cyan" />
+            <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
+              <Reveal>
+                <div className="role-command relative h-full overflow-hidden rounded-lg bg-neutral-950 p-7 text-white shadow-2xl shadow-neutral-950/15 sm:p-8">
+                  <span className="role-command-scan" aria-hidden="true" />
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">
+                    Technical team
+                  </p>
+                  <h2 className="mt-4 text-3xl font-semibold tracking-normal sm:text-4xl">
+                    Delivery roles arranged for end-to-end execution
+                  </h2>
+                  <p className="mt-5 text-base leading-7 text-neutral-300">
+                    Cross-functional specialists cover strategy, architecture, design, engineering, security, delivery, and support.
+                  </p>
+                  <div className="mt-8 grid grid-cols-2 gap-3">
+                    <div className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
+                      <p className="text-4xl font-semibold text-brand-orange-light">7</p>
+                      <p className="mt-1 text-sm text-neutral-400">Role groups</p>
+                    </div>
+                    <div className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
+                      <p className="text-4xl font-semibold text-brand-cyan">100+</p>
+                      <p className="mt-1 text-sm text-neutral-400">Professionals</p>
                     </div>
                   </div>
-                </Reveal>
-              ))}
+                </div>
+              </Reveal>
+
+              <div className="role-lanes grid gap-3">
+                {teamRoles.map((role, index) => {
+                  const initials = role
+                    .split(" ")
+                    .filter((word) => word !== "&")
+                    .slice(0, 2)
+                    .map((word) => word[0])
+                    .join("");
+
+                  return (
+                    <Reveal key={role} delay={index * 0.03}>
+                      <div className="role-lane group relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-orange/35 hover:shadow-xl">
+                        <div className="relative flex items-center gap-4">
+                          <span className="role-lane-index">0{index + 1}</span>
+                          <span className="role-lane-avatar">{initials}</span>
+                          <div className="min-w-0 flex-1">
+                            <p className="font-semibold text-neutral-950">{role}</p>
+                            <div className="mt-3 h-1 overflow-hidden rounded-full bg-neutral-100">
+                              <span className=" block h-full rounded-full bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-cyan" />
+                            </div>
+                          </div>
+                          <ChevronRight className="h-5 w-5 shrink-0 text-neutral-300 transition group-hover:translate-x-1 group-hover:text-brand-orange" />
+                        </div>
+                      </div>
+                    </Reveal>
+                  );
+                })}
+              </div>
             </div>
           </Container>
         </section>
