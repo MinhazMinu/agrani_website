@@ -83,18 +83,40 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="border-y border-neutral-200 bg-neutral-50 py-12">
-          <Container>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="serve-band relative overflow-hidden border-y border-neutral-900 bg-neutral-950 py-16 text-white">
+          <Container className="relative">
+            <Reveal>
+              <div className="mb-9 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">
+                    Who we serve
+                  </p>
+                  <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-normal sm:text-4xl">
+                    Digital delivery across Bangladesh&apos;s key sectors
+                  </h2>
+                </div>
+                <div className="serve-mini-ribbon rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-neutral-300 backdrop-blur">
+                  Government | Private Sector | NGOs | Education
+                </div>
+              </div>
+            </Reveal>
+
+            <div className="serve-track grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {sectors.map((sector, index) => {
                 const Icon = sector.icon;
                 return (
                   <Reveal key={sector.label} delay={index * 0.04}>
-                    <div className="flex items-center gap-4 rounded-lg bg-white p-5 shadow-sm">
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-cyan/10 text-brand-cyan">
+                    <div className="serve-card group relative min-h-44 overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-5 shadow-2xl shadow-black/20 backdrop-blur transition hover:-translate-y-1 hover:border-brand-orange/50">
+                      <span className="absolute right-4 top-3 text-xl font-semibold leading-none text-white/[0.04]">
+                        0{index + 1}
+                      </span>
+                      <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:scale-105 group-hover:text-brand-orange">
                         <Icon size={22} />
                       </span>
-                      <p className="font-semibold text-neutral-950">{sector.label}</p>
+                      <p className="relative mt-7 text-xl font-semibold text-white">{sector.label}</p>
+                      {/* <div className="relative mt-4 h-1.5 overflow-hidden rounded-full bg-white/10">
+                        <span className="serve-progress block h-full rounded-full bg-gradient-to-r from-brand-orange to-brand-cyan" />
+                      </div> */}
                     </div>
                   </Reveal>
                 );

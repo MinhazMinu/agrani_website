@@ -165,3 +165,114 @@ a {
     transform: scale(1.18);
   }
 }
+
+.serve-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 30%, rgba(241, 90, 36, 0.22), transparent 28%),
+    radial-gradient(circle at 88% 70%, rgba(37, 150, 190, 0.22), transparent 30%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 52px 52px, 52px 52px;
+  opacity: 0.9;
+}
+
+.serve-band::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transform: skewX(-18deg);
+  animation: serve-light-sweep 8s ease-in-out infinite;
+}
+
+.serve-mini-ribbon {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.serve-track {
+  position: relative;
+}
+
+.serve-track::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(222, 120, 86, 0.65), rgba(37, 150, 190, 0.65), transparent);
+  opacity: 0.5;
+}
+
+.serve-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(241, 90, 36, 0.65), transparent 35%, rgba(37, 150, 190, 0.65));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.serve-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: calc(0.5rem - 1px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+}
+
+.serve-card > * {
+  z-index: 1;
+}
+
+.serve-card:hover::before {
+  opacity: 1;
+}
+
+.serve-progress {
+  width: 42%;
+  animation: serve-progress 3.8s ease-in-out infinite;
+}
+
+@media (max-width: 1023px) {
+  .serve-track::before {
+    display: none;
+  }
+}
+
+@keyframes serve-light-sweep {
+  0%,
+  30% {
+    transform: translateX(0) skewX(-18deg);
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(340%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes serve-progress {
+  0%,
+  100% {
+    width: 34%;
+    opacity: 0.65;
+  }
+
+  50% {
+    width: 88%;
+    opacity: 1;
+  }
+}
