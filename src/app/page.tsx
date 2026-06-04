@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Handshake, ShieldCheck, Sparkles, Trophy, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
@@ -111,7 +111,7 @@ export default function Home() {
                         0{index + 1}
                       </span>
                       <span className="serve-icon relative inline-flex h-16 w-16 items-center justify-center rounded-lg bg-white text-brand-cyan shadow-lg shadow-brand-cyan/10 transition group-hover:scale-105 group-hover:text-brand-orange">
-                        <span className="serve-icon-orbit" aria-hidden="true" />
+                        {/* <span className="serve-icon-orbit" aria-hidden="true" /> */}
                         <Icon className="relative h-7 w-7 transition group-hover:-rotate-6 group-hover:scale-110" />
                       </span>
                       <p className="relative mt-7 text-xl font-semibold text-white">{sector.label}</p>
@@ -126,14 +126,85 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="py-20">
-          <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <SectionHeader eyebrow="Why choose Agrani" title="Trusted technology partner for real digital impact" />
-            <Reveal delay={0.08}>
-              <p className="text-lg leading-8 text-neutral-600">
-                With over a decade long experience, Agrani Technologies has been a trusted technology partner to government agencies, private enterprises, and development organisations across Bangladesh. Our 100+ professionals deliver end-to-end solutions, from software development to cybersecurity, with quality and integrity at every step. We don&apos;t just build technology; we build long-term partnerships that drive real impact.
-              </p>
-            </Reveal>
+        <section className="why-band relative overflow-hidden py-24">
+          <Container className="relative">
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+              <Reveal>
+                <div className="why-panel relative h-full overflow-hidden rounded-lg border border-neutral-200 bg-white p-7 shadow-2xl shadow-neutral-950/5 sm:p-9">
+                  <span className="why-panel-line" aria-hidden="true" />
+                  <p className="inline-flex items-center gap-2 rounded-full border border-brand-orange/20 bg-brand-orange/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
+                    <Sparkles className="h-4 w-4" /> Why choose Agrani
+                  </p>
+                  <h2 className="mt-6 max-w-2xl text-4xl font-semibold tracking-normal text-neutral-950 sm:text-5xl">
+                    Trusted technology partner for real digital impact
+                  </h2>
+                  <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-600">
+                    With over a decade long experience, Agrani Technologies has been a trusted technology partner to government agencies, private enterprises, and development organisations across Bangladesh. Our 100+ professionals deliver end-to-end solutions, from software development to cybersecurity, with quality and integrity at every step.
+                  </p>
+                  <p className="mt-5 text-lg font-semibold leading-8 text-neutral-950">
+                    We don&apos;t just build technology; we build long-term partnerships that drive real impact.
+                  </p>
+
+                  <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                    {[
+                      { label: "Quality", icon: Trophy },
+                      { label: "Integrity", icon: ShieldCheck },
+                      { label: "Partnerships", icon: Handshake },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <div key={item.label} className="why-chip group flex items-center gap-3 rounded-lg border border-neutral-200 bg-white/80 p-4">
+                          <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-950 text-white transition group-hover:bg-brand-orange">
+                            <Icon className="h-5 w-5" />
+                          </span>
+                          <span className="text-sm font-semibold text-neutral-900">{item.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.08}>
+                <div className="impact-brief relative h-full overflow-hidden rounded-lg border border-neutral-200 bg-neutral-950 p-6 text-white shadow-2xl shadow-neutral-950/15 sm:p-7">
+                  <span className="impact-brief-scan" aria-hidden="true" />
+                  <div className="relative flex items-start justify-between gap-6">
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange-light">
+                        Delivery proof
+                      </p>
+                      <h3 className="mt-4 max-w-md text-3xl font-semibold tracking-normal sm:text-4xl">
+                        Built for national-scale digital programmes
+                      </h3>
+                    </div>
+                    <span className="hidden rounded-lg border border-white/10 bg-white/10 px-4 py-3 text-right sm:block">
+                      <span className="block text-2xl font-semibold text-brand-orange-light">2013</span>
+                      <span className="text-xs font-medium uppercase tracking-[0.14em] text-neutral-400">Since</span>
+                    </span>
+                  </div>
+
+                  <div className="relative mt-8 grid gap-4">
+                    {stats.map((stat, index) => (
+                      <div key={stat.label} className="impact-proof group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-5 backdrop-blur transition hover:-translate-y-1 hover:border-brand-orange/40">
+                        <div className="relative flex items-center gap-5">
+                          <span className="impact-proof-index">0{index + 1}</span>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-3xl font-semibold text-white">{stat.value}</p>
+                            <p className="mt-1 text-sm font-medium text-neutral-300">{stat.label}</p>
+                          </div>
+                          <span className="impact-proof-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-cyan transition group-hover:bg-brand-orange group-hover:text-white">
+                            {index === 1 ? <Users className="h-6 w-6" /> : <CheckCircle2 className="h-6 w-6" />}
+                          </span>
+                        </div>
+                        <div className="relative mt-5 h-1 overflow-hidden rounded-full bg-white/10">
+                          <span className=" block h-full rounded-full bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-cyan" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            </div>
           </Container>
         </section>
       </main>
