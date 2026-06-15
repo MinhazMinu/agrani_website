@@ -102,7 +102,7 @@ Contact page requirements:
 - Address: House 99, Block C, Road 11, Banani, Dhaka-1213
 - Phone: +880-9606116116
 - Email: info@agranitech.net
-- Website: www.agranitech.net
+- Website: www.agranitechbd.com
 - Contact form should be frontend-only
 - On submit, show a success message
 - Include mailto fallback to info@agranitech.net

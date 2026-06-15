@@ -10,7 +10,7 @@ export function Footer() {
       <Container className="py-12">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr_1fr]">
           <div>
-            <Image src="/logo.jpg" alt={company.name} width={220} height={72} className="h-14 w-auto rounded bg-white p-1" />
+            <Image src="/logo_dark_bg.png" alt={company.name} width={220} height={72} className="h-14 w-auto rounded  p-1" />
             <p className="mt-5 max-w-xl text-sm leading-7 text-neutral-300">
               Cutting-edge software, cloud, and e-governance solutions for public and private sectors across Bangladesh.
             </p>

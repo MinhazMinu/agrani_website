@@ -14,7 +14,7 @@ export default function ContactPage() {
     { label: "Address", value: company.address, icon: MapPin, href: null },
     { label: "Phone", value: company.phone, icon: Phone, href: `tel:${company.phone}` },
     { label: "Email", value: company.email, icon: Mail, href: `mailto:${company.email}` },
-    { label: "Website", value: company.website, icon: Globe2, href: "https://www.agranitech.net" },
+    { label: "Website", value: company.website, icon: Globe2, href: `https://${company.website}` },
   ];
 
   return (
