@@ -51,14 +51,15 @@ export default function ContactPage() {
               })}
             </div>
             <Reveal delay={0.14}>
-              <div className="mt-6 flex min-h-72 items-center justify-center rounded-lg border border-dashed border-neutral-300 bg-neutral-50 p-6 text-center">
-                <div>
-                  <MapPin className="mx-auto h-8 w-8 text-brand-cyan" />
-                  <h2 className="mt-4 text-lg font-semibold text-neutral-950">Map placeholder</h2>
-                  <p className="mt-2 max-w-sm text-sm leading-6 text-neutral-600">
-                    House 99, Block C, Road 11, Banani, Dhaka-1213
-                  </p>
-                </div>
+              <div className="mt-6 overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 shadow-sm">
+                <iframe
+                  title="Agrani Technologies & Services Limited location map"
+                  src="https://www.google.com/maps?q=23.8340264,90.366077&z=17&output=embed"
+                  className="h-72 w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
               </div>
             </Reveal>
           </div>
