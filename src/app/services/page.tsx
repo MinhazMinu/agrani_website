@@ -42,7 +42,7 @@ export default function ServicesPage() {
                 <p className="relative mt-3 text-6xl font-semibold text-brand-orange">7</p>
                 <p className="relative mt-2 text-lg font-semibold text-neutral-950">Core service lines</p>
                 <div className="relative mt-6 grid gap-3">
-                  {serviceDetails.slice(0, 4).map((service) => (
+                  {serviceDetails.map((service) => (
                     <div key={service.title} className="flex items-center gap-3 rounded-lg border border-neutral-200 bg-white/80 p-3 shadow-sm">
                       <service.icon className="h-5 w-5 text-brand-orange" />
                       <span className="text-sm font-semibold text-neutral-800">{service.title}</span>

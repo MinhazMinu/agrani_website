@@ -19,6 +19,10 @@ import {
   Users,
   Workflow,
   Wrench,
+  BrainCircuit,
+  Landmark,
+  Plane,
+  BusFront,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -31,10 +35,10 @@ export type IconItem = {
 export const company = {
   name: "Agrani Technologies & Services Limited",
   shortName: "Agrani Technologies",
-  email: "info@agranitech.net",
-  phone: "+880-9606116116",
-  website: "www.agranitech.net",
-  address: "House 99, Block C, Road 11, Banani, Dhaka-1213",
+  email: "info@agranitechbd.com",
+  phone: "+880-9610944449",
+  website: "www.agranitechbd.com",
+  address: "Plot-174/176, Road-02, Avenue-01, Mirpur DOHS, Dhaka-1216, Bangladesh",
   founded: "2013",
 };
 
@@ -107,73 +111,87 @@ export const services: IconItem[] = [
 
 export const serviceDetails = [
   {
-    title: "Software Development",
-    icon: Code2,
-    items: [
-      "Custom Web & Mobile Application Development",
-      "Enterprise Resource Planning (ERP) Systems",
-      "Human Resource Management Systems (HRMS)",
-      "Learning Management Systems (LMS)",
-      "E-commerce Platforms",
-      "Payment Integration Solutions",
-    ],
-  },
-  {
-    title: "IT Consultancy",
+    title: "Technology Consultancy",
     icon: Lightbulb,
     items: [
-      "Strategic IT Roadmaps",
-      "Digital Transformation Planning",
-      "Technology Feasibility Studies",
-      "System Audit & Optimization",
+      "Strategic Technology Roadmap Development",
+      "Digital Transformation Strategy",
+      "Technology Feasibility and Readiness Assessment",
+      "Enterprise Architecture Consulting",
+      "IT Governance and Policy Development",
+      "Business Process Analysis and Optimization",
     ],
   },
   {
-    title: "System Integration",
+    title: "AI-Powered Government Services",
+    icon: BrainCircuit,
+    items: [
+      "AI-powered Citizen Service Portals",
+      "Intelligent Chatbots and Virtual Assistants",
+      "Automated Document Processing and Classification",
+      "Predictive Analytics for Public Service Planning",
+      "AI-based Fraud and Anomaly Detection",
+      "Decision Support Systems for Government Agencies",
+    ],
+  },
+  {
+    title: "Digital Public Infrastructure (DPI)",
+    icon: Landmark,
+    items: [
+      "Digital Identity and Authentication Platforms",
+      "Digital Payment Infrastructure",
+      "Consent-based Data Sharing Frameworks",
+      "Government Service Delivery Platforms",
+      "Public Digital Registries",
+      "Secure and Scalable National Digital Platforms",
+    ],
+  },
+  {
+    title: "Aviation Digital Transformation",
+    icon: Plane,
+    items: [
+      "Airport Operations Management Systems",
+      "Passenger Processing and Self-service Solutions",
+      "Flight Information Display Systems",
+      "Aviation Data Integration Platforms",
+      "Smart Baggage Tracking Solutions",
+      "Airport Resource and Asset Management",
+    ],
+  },
+  {
+    title: "Smart Transportation Ecosystem",
+    icon: BusFront,
+    items: [
+      "Intelligent Transport Management Systems",
+      "Smart Ticketing and Fare Collection",
+      "Real-time Vehicle Tracking and Fleet Management",
+      "Traffic Monitoring and Control Systems",
+      "Passenger Information Systems",
+      "Integrated Multimodal Transportation Platforms",
+    ],
+  },
+  {
+    title: "National Data Exchange & Interoperability",
     icon: Network,
     items: [
-      "End-to-End Systems Integration",
-      "Interoperability Solutions for Government & Corporates",
-      "Infrastructure Setup & Configuration",
+      "National Data Exchange Platform Development",
+      "Government System Interoperability Frameworks",
+      "Secure API Gateway and Service Integration",
+      "Master Data Management and Data Governance",
+      "Cross-agency Data Sharing Solutions",
+      "Data Standards and Integration Architecture",
     ],
   },
   {
-    title: "Cloud & Infrastructure Services",
-    icon: Cloud,
+    title: "Smart City Platforms",
+    icon: Building2,
     items: [
-      "Cloud Migration (AWS, Azure, Google Cloud)",
-      "Private and Public Cloud Setup",
-      "Server and Network Management",
-      "Virtualization Solutions",
-    ],
-  },
-  {
-    title: "Cybersecurity Solutions",
-    icon: ShieldCheck,
-    items: [
-      "Network Security Architecture",
-      "Vulnerability Assessment & Penetration Testing (VAPT)",
-      "Data Encryption and Secure Backup",
-      "Incident Response and Recovery",
-    ],
-  },
-  {
-    title: "Managed IT Services",
-    icon: Headphones,
-    items: [
-      "Remote and On-site Technical Support",
-      "Maintenance of Critical IT Infrastructure",
-      "SLA-based IT Helpdesk Services",
-    ],
-  },
-  {
-    title: "E-Governance Solutions",
-    icon: Workflow,
-    items: [
-      "Citizen Service Portals",
-      "Digital Document Management Systems",
-      "Workflow Automation for Government Agencies",
-      "MIS and Decision Support Systems for Ministries",
+      "Integrated City Operations Platforms",
+      "Smart Utility and Energy Management",
+      "Public Safety and Emergency Response Systems",
+      "Environmental Monitoring Solutions",
+      "Smart Parking and Traffic Management",
+      "Urban Analytics and City Decision Support Systems",
     ],
   },
 ];
@@ -229,22 +247,24 @@ export const team = [
 
 export const teamRoles = [
   "Software Engineers",
-  "System Architects",
+  "System/Solution Architects",
+  "Database Experts",
   "UI/UX Designers",
+  "Software QA Experts/Software Testing Engineer",
   "Network & Security Experts",
   "Business Analysts",
   "Project Managers",
-  "Support Technicians",
+  "Support Engineers/Technicians"
 ];
 
 export const technologyGroups = [
   { title: "Languages", icon: Code2, items: ["Java", "Python", "PHP", "JavaScript", ".NET"] },
-  { title: "Frameworks", icon: Layers3, items: ["Laravel", "Spring Boot", "Angular", "Django"] },
+  { title: "Frameworks", icon: Layers3, items: ["Laravel", "Spring Boot", "Angular", "Django", "CodeIgniter"] },
   { title: "Databases", icon: Database, items: ["MySQL", "PostgreSQL", "Oracle", "MongoDB"] },
   { title: "Cloud", icon: Cloud, items: ["AWS", "Azure", "GCP"] },
   { title: "DevOps", icon: MonitorCog, items: ["Docker", "Jenkins", "Git", "Kubernetes"] },
   { title: "Security", icon: Lock, items: ["SSL", "OAuth", "Firewalls", "Pen Testing"] },
-  { title: "Others", icon: Cpu, items: ["REST APIs", "Microservices", "AI/ML (basic)"] },
+  { title: "Others", icon: Cpu, items: ["REST APIs", "Microservices", "AI/ML (basic)", "MVC Architecture"] },
 ];
 
 export const infrastructure: IconItem[] = [

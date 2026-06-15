@@ -67,6 +67,8 @@ const techItemIcons: Record<string, LucideIcon> = {
   "REST APIs": Globe,
   Microservices: Network,
   "AI/ML (basic)": Cpu,
+  "MVC Architecture": Route,
+  "Codeigniter": Braces,
 };
 
 export default function ExpertisePage() {
@@ -188,9 +190,7 @@ export default function ExpertisePage() {
             <Reveal className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">Technological expertise</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal text-neutral-950 sm:text-4xl">We work with a wide range of technologies and platforms including:</h2>
-              <p className="mt-4 text-base leading-7 text-neutral-600">
-                Grouped display with icons across languages, frameworks, databases, cloud, DevOps, security, and other core platforms.
-              </p>
+
             </Reveal>
             <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {technologyGroups.map((group, index) => {

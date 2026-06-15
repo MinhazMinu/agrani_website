@@ -21,7 +21,7 @@ export default function ContactPage() {
     <main>
       <section className="bg-[linear-gradient(135deg,#fff7f3_0%,#ffffff_50%,#eef9fb_100%)] py-20">
         <Container>
-          <SectionHeader eyebrow="Contact" title="Start a conversation with Agrani Technologies" description="Use the frontend-only contact form for now, or reach the team directly by phone or email." />
+          <SectionHeader eyebrow="Contact" title="Start a conversation with Agrani Technologies" description="Let’s discuss your ideas, challenges, and technology requirements to build the right solution for your organization." />
         </Container>
       </section>
 
