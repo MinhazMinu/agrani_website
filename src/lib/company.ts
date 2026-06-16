@@ -224,6 +224,19 @@ export const serviceDetails = [
       "Database Administration (DBA) & Storage",
     ],
   },
+  {
+    title: "Technology Based Consultancy",
+    icon: Cpu,
+    items: [
+        "Strategy & Governance IT Strategy & Digital Transformation",
+        "Infrastructure & Cloud Services - Cloud Advisory & Migration",
+        "Software & Product Engineering - Custom Software Development Consulting",
+        "Data, Analytics, & Artificial Intelligence - Data Strategy & Governance",
+        "Cybersecurity & Trust - Security Assessments & Penetration Testing",
+        "Enterprise Business Applications - ERP Consulting for SAP, Oracle, Microsoft Dynamics, and CRM Consulting",
+        "Specialized & Emerging Tech Consulting - IoT Consulting",
+    ],
+  },
 ];
 
 
