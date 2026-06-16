@@ -110,8 +110,8 @@ export default function ExpertisePage() {
                 </div>
                 <div className="relative mt-6 grid gap-3">
                   {[
-                    { label: "Technical roles", value: "7" },
-                    { label: "Technology groups", value: "7" },
+                    { label: "Technical roles", value: "9" },
+                    { label: "Technology groups", value: "9" },
                     { label: "Operations coverage", value: "24/7" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white/80 px-4 py-3 shadow-sm">
@@ -140,14 +140,22 @@ export default function ExpertisePage() {
                   <p className="mt-5 text-base leading-7 text-neutral-300">
                     Cross-functional specialists cover strategy, architecture, design, engineering, security, delivery, and support.
                   </p>
-                  <div className="mt-8 grid grid-cols-2 gap-3">
+                  <div className="mt-8 grid grid-cols-1 gap-3">
                     <div className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
-                      <p className="text-4xl font-semibold text-brand-orange-light">7</p>
-                      <p className="mt-1 text-sm text-neutral-400">Role groups</p>
+                      <p className="text-4xl font-semibold text-brand-cyan">9</p>
+                      <p className="mt-1 text-sm  text-brand-orange-light">Role groups</p>
                     </div>
                     <div className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
-                      <p className="text-4xl font-semibold text-brand-cyan">100+</p>
-                      <p className="mt-1 text-sm text-neutral-400">Professionals</p>
+                      <p className="text-4xl font-semibold text-brand-cyan ">100+</p>
+                      <p className="mt-1 text-sm text-brand-orange-light">Professionals</p>
+                    </div>
+                    <div className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
+                      <p className="text-4xl font-semibold text-brand-cyan">10+</p>
+                      <p className="mt-1 text-sm text-brand-orange-light">Years in Operation</p>
+                    </div>
+                    <div className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
+                      <p className="text-4xl font-semibold text-brand-cyan ">Nationwide</p>
+                      <p className="mt-1 text-sm text-brand-orange-light">Reach</p>
                     </div>
                   </div>
                 </div>

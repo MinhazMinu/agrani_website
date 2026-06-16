@@ -43,7 +43,7 @@ export default function Home() {
                   <span className="ai-node ai-node-two" aria-hidden="true" />
                   <span className="ai-node ai-node-three" aria-hidden="true" />
                   <div className="relative rounded-lg border border-white/70 bg-white/90 p-3 shadow-sm">
-                    <Image src="/logo.jpg" alt="Agrani Technologies & Services Limited logo" width={540} height={176} className="w-full rounded bg-white" priority />
+                    <Image src="/logo.png" alt="Agrani Technologies & Services Limited logo" width={540} height={176} className="w-full rounded bg-white" priority />
                   </div>
                   <div className="mt-8 grid gap-4 sm:grid-cols-2">
                     {["Software", "Cloud", "Cybersecurity", "E-Governance"].map((item) => (
