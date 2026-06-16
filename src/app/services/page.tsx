@@ -39,7 +39,7 @@ export default function ServicesPage() {
               <div className="services-console relative overflow-hidden rounded-lg border border-white/70 bg-white/85 p-6 shadow-2xl shadow-brand-cyan/10 backdrop-blur">
                 <span className="services-scan" aria-hidden="true" />
                 <p className="relative text-sm font-semibold uppercase tracking-[0.18em] text-brand-cyan">Service coverage</p>
-                <p className="relative mt-3 text-6xl font-semibold text-brand-orange">7</p>
+                <p className="relative mt-3 text-6xl font-semibold text-brand-orange">10</p>
                 <p className="relative mt-2 text-lg font-semibold text-neutral-950">Core service lines</p>
                 <div className="relative mt-6 grid gap-3">
                   {serviceDetails.map((service) => (
@@ -66,7 +66,7 @@ export default function ServicesPage() {
                   </p>
                   <div className="mt-8 grid grid-cols-2 gap-3">
                     <div className="rounded-lg border border-white/10 bg-neutral-950/50 p-4">
-                      <p className="text-4xl font-semibold text-brand-orange-light">7</p>
+                      <p className="text-4xl font-semibold text-brand-orange-light">10</p>
                       <p className="mt-1 text-sm text-neutral-400">Service lines</p>
                     </div>
                     <div className="rounded-lg border border-white/10 bg-neutral-950/50 p-4">

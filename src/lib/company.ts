@@ -23,6 +23,8 @@ import {
   Landmark,
   Plane,
   BusFront,
+  Bot,
+  Headset,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -111,90 +113,119 @@ export const services: IconItem[] = [
 
 export const serviceDetails = [
   {
-    title: "Technology Consultancy",
-    icon: Lightbulb,
+    title: "Software Development",
+    icon: Code2,
     items: [
-      "Strategic Technology Roadmap Development",
-      "Digital Transformation Strategy",
-      "Technology Feasibility and Readiness Assessment",
-      "Enterprise Architecture Consulting",
-      "IT Governance and Policy Development",
-      "Business Process Analysis and Optimization",
+      "Custom Web & Mobile Application Development",
+      "Enterprise Resource Planning (ERP) Systems",
+      "Human Resource Management Systems (HRMS)",
+      "Learning Management Systems (LMS)",
+      "E-commerce Platforms",
+      "Payment Integration Solutions",
+    ],
+  },
+  {
+    title: "IT/Technology Consultancy",
+    icon: BrainCircuit,
+    items: [
+      "Strategic IT Roadmaps",
+      "Digital Transformation Planning",
+      "Technology Feasibility Studies",
+      "System Audit & Optimization",
+    ],
+  },
+  {
+    title: "System Integration & Interoperability",
+    icon: Landmark,
+    items: [
+      "End-to-End Systems Integration",
+      "Interoperability Solutions for Government & Corporates",
+      "Infrastructure Setup & Configuration",
+      "API Gateway",
+      "Data Exchange Hub",
+      "Master Data Management",
+      "Real-time Inter-agency Sharing",
+    ],
+  },
+  {
+    title: "Cloud & Infrastructure Services",
+    icon: Cloud,
+    items: [
+      "Cloud Migration (AWS, Azure, Google Cloud)",
+      "Private and Public Cloud Setup",
+      "Server and Network Management",
+      "Virtualization Solutions",
+    ],
+  },
+  {
+    title: "Cybersecurity Solutions",
+    icon: ShieldCheck,
+    items: [
+      "Network Security Architecture",
+      "Vulnerability Assessment & Penetration Testing (VAPT)",
+      "Data Encryption and Secure Backup",
+      "Incident Response and Recovery",
+    ],
+  },
+  {
+    title: "Managed IT Services",
+    icon: Headset,
+    items: [
+      "Remote and On-site Technical Support",
+      "Maintenance of Critical IT Infrastructure",
+      "SLA-based IT Helpdesk Services",
+    ],
+  },
+  {
+    title: "E-Governance Solutions",
+    icon: Building2,
+    items: [
+      "Citizen Service Portals",
+      "Emergency Response Systems",
+      "Digital Document Management Systems",
+      "Workflow Automation for Government Agencies",
+      "MIS and Decision Support Systems for Ministries",
+      "Single Sign-On for All Government Services",
     ],
   },
   {
     title: "AI-Powered Government Services",
-    icon: BrainCircuit,
+    icon: Bot,
     items: [
-      "AI-powered Citizen Service Portals",
-      "Intelligent Chatbots and Virtual Assistants",
-      "Automated Document Processing and Classification",
-      "Predictive Analytics for Public Service Planning",
-      "AI-based Fraud and Anomaly Detection",
-      "Decision Support Systems for Government Agencies",
-    ],
-  },
-  {
-    title: "Digital Public Infrastructure (DPI)",
-    icon: Landmark,
-    items: [
-      "Digital Identity and Authentication Platforms",
-      "Digital Payment Infrastructure",
-      "Consent-based Data Sharing Frameworks",
-      "Government Service Delivery Platforms",
-      "Public Digital Registries",
-      "Secure and Scalable National Digital Platforms",
-    ],
-  },
-  {
-    title: "Aviation Digital Transformation",
-    icon: Plane,
-    items: [
-      "Airport Operations Management Systems",
-      "Passenger Processing and Self-service Solutions",
-      "Flight Information Display Systems",
-      "Aviation Data Integration Platforms",
-      "Smart Baggage Tracking Solutions",
-      "Airport Resource and Asset Management",
+      "AI Chatbots for Citizen Services",
+      "AI-based Grievance Management",
+      "Document Processing",
+      "Permit and License Approvals",
+      "Predictive Analytics for Policy Decisions",
     ],
   },
   {
     title: "Smart Transportation Ecosystem",
     icon: BusFront,
     items: [
-      "Intelligent Transport Management Systems",
-      "Smart Ticketing and Fare Collection",
-      "Real-time Vehicle Tracking and Fleet Management",
-      "Traffic Monitoring and Control Systems",
-      "Passenger Information Systems",
-      "Integrated Multimodal Transportation Platforms",
+      "Integrated Mobility Platform",
+      "Unified Ticketing",
+      "Smart Parking",
+      "Intelligent Traffic Management",
+      "AI Traffic Prediction",
+      "Electronic Toll Collection",
     ],
   },
   {
-    title: "National Data Exchange & Interoperability",
-    icon: Network,
+    title: "IT Training",
+    icon: GraduationCap,
     items: [
-      "National Data Exchange Platform Development",
-      "Government System Interoperability Frameworks",
-      "Secure API Gateway and Service Integration",
-      "Master Data Management and Data Governance",
-      "Cross-agency Data Sharing Solutions",
-      "Data Standards and Integration Architecture",
-    ],
-  },
-  {
-    title: "Smart City Platforms",
-    icon: Building2,
-    items: [
-      "Integrated City Operations Platforms",
-      "Smart Utility and Energy Management",
-      "Public Safety and Emergency Response Systems",
-      "Environmental Monitoring Solutions",
-      "Smart Parking and Traffic Management",
-      "Urban Analytics and City Decision Support Systems",
+      "Software Development & Engineering",
+      "Cloud Computing & Infrastructure",
+      "Cyber Security & Information Assurance",
+      "Data Science, AI, & Advanced Analytics",
+      "Networking & Systems Administration",
+      "IT Service Management (ITSM) & Project Governance",
+      "Database Administration (DBA) & Storage",
     ],
   },
 ];
+
 
 export const values: IconItem[] = [
   {
