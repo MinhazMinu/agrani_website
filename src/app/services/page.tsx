@@ -15,7 +15,7 @@ export default function ServicesPage() {
     <>
       <main>
         <section className="services-hero relative overflow-hidden py-20 sm:py-24">
-          <Container className="relative grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+          <Container className="relative grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
             <Reveal>
               <p className="inline-flex items-center gap-2 rounded-full border border-brand-orange/25 bg-brand-orange/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
                 <Sparkles className="h-4 w-4" /> Services
