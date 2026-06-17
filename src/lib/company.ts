@@ -115,6 +115,8 @@ export const services: IconItem[] = [
 export const serviceDetails = [
   {
     title: "Software Development",
+    description:
+      "We design and develop scalable web, mobile, and enterprise software solutions tailored to business operations and digital growth.",
     icon: Code2,
     items: [
       "Custom Web & Mobile Application Development",
@@ -127,19 +129,23 @@ export const serviceDetails = [
   },
   {
     title: "Technology Oriented Consultancy",
+    description:
+      "We provide strategic technology consulting to help organizations plan, modernize, govern, and optimize their digital transformation initiatives.",
     icon: Cpu,
     items: [
-        "Strategy & Governance IT Strategy & Digital Transformation",
-        "Infrastructure & Cloud Services - Cloud Advisory & Migration",
-        "Software & Product Engineering - Custom Software Development Consulting",
-        "Data, Analytics, & Artificial Intelligence - Data Strategy & Governance",
-        "Cybersecurity & Trust - Security Assessments & Penetration Testing",
-        "Enterprise Business Applications - ERP Consulting for SAP, Oracle, Microsoft Dynamics, and CRM Consulting",
-        "Specialized & Emerging Tech Consulting - IoT Consulting",
+      "Strategy & Governance IT Strategy & Digital Transformation",
+      "Infrastructure & Cloud Services - Cloud Advisory & Migration",
+      "Software & Product Engineering - Custom Software Development Consulting",
+      "Data, Analytics, & Artificial Intelligence - Data Strategy & Governance",
+      "Cybersecurity & Trust - Security Assessments & Penetration Testing",
+      "Enterprise Business Applications - ERP Consulting for SAP, Oracle, Microsoft Dynamics, and CRM Consulting",
+      "Specialized & Emerging Tech Consulting - IoT Consulting",
     ],
   },
   {
     title: "System Integration & Interoperability",
+    description:
+      "We connect systems, platforms, applications, and data sources to enable secure, seamless, and real-time information exchange.",
     icon: Landmark,
     items: [
       "End-to-End Systems Integration",
@@ -153,6 +159,8 @@ export const serviceDetails = [
   },
   {
     title: "Cloud & Infrastructure Services",
+    description:
+      "We help organizations migrate, deploy, manage, and optimize secure cloud and infrastructure environments for better reliability and scalability.",
     icon: Cloud,
     items: [
       "Cloud Migration (AWS, Azure, Google Cloud)",
@@ -163,6 +171,8 @@ export const serviceDetails = [
   },
   {
     title: "Cybersecurity Solutions",
+    description:
+      "We protect digital assets through security architecture, risk assessment, penetration testing, data protection, and incident response services.",
     icon: ShieldCheck,
     items: [
       "Network Security Architecture",
@@ -173,6 +183,8 @@ export const serviceDetails = [
   },
   {
     title: "Managed IT Services",
+    description:
+      "We provide reliable IT operations, support, maintenance, and helpdesk services to keep business-critical systems running smoothly.",
     icon: Headset,
     items: [
       "Remote and On-site Technical Support",
@@ -182,6 +194,8 @@ export const serviceDetails = [
   },
   {
     title: "E-Governance Solutions",
+    description:
+      "We build digital government platforms that improve citizen services, automate workflows, and support efficient public-sector operations.",
     icon: Building2,
     items: [
       "Citizen Service Portals",
@@ -194,6 +208,8 @@ export const serviceDetails = [
   },
   {
     title: "AI-Powered Government Services",
+    description:
+      "We develop AI-enabled solutions that automate citizen support, document processing, grievance handling, approvals, and policy decision-making.",
     icon: Bot,
     items: [
       "AI Chatbots for Citizen Services",
@@ -205,6 +221,8 @@ export const serviceDetails = [
   },
   {
     title: "Smart Transportation Ecosystem",
+    description:
+      "We deliver intelligent transportation platforms for mobility management, smart ticketing, traffic control, parking, tolling, and real-time analytics.",
     icon: BusFront,
     items: [
       "Integrated Mobility Platform",
@@ -217,6 +235,8 @@ export const serviceDetails = [
   },
   {
     title: "IT Training",
+    description:
+      "We offer professional IT training programs to build technical skills in software, cloud, cybersecurity, data, networking, and IT governance.",
     icon: GraduationCap,
     items: [
       "Software Development & Engineering",
@@ -229,22 +249,23 @@ export const serviceDetails = [
     ],
   },
   {
-  title: "Offshore IT Services",
-  icon: Globe2,
-  items: [
-    "Software Development",
-    "Application Maintenance & Support",
-    "Quality Assurance (QA) & Testing",
-    "Infrastructure & IT Operations",
-    "Cloud Services",
-    "Cybersecurity Services",
-    "Data & Analytics",
-    "Artificial Intelligence & Machine Learning",
-    "UI/UX Design",
-    "Business Process Outsourcing (IT-Related)",
-  ],
-},
-
+    title: "Offshore IT Services",
+    description:
+      "We provide offshore IT delivery services for software development, support, QA, cloud, cybersecurity, analytics, AI, design, and IT-enabled operations.",
+    icon: Globe2,
+    items: [
+      "Software Development",
+      "Application Maintenance & Support",
+      "Quality Assurance (QA) & Testing",
+      "Infrastructure & IT Operations",
+      "Cloud Services",
+      "Cybersecurity Services",
+      "Data & Analytics",
+      "Artificial Intelligence & Machine Learning",
+      "UI/UX Design",
+      "Business Process Outsourcing (IT-Related)",
+    ],
+  },
 ];
 
 

@@ -6,7 +6,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
 import { SectionHeader } from "@/components/section-header";
 import { ServiceCard } from "@/components/service-card";
-import { sectors, services, stats } from "@/lib/company";
+import { sectors, services, stats, serviceDetails } from "@/lib/company";
 
 export default function Home() {
   return (
@@ -76,7 +76,7 @@ export default function Home() {
           <Container>
             <SectionHeader eyebrow="Products and services" title="End-to-end technology services for modern institutions" description="Agrani builds, integrates, protects, and supports mission-critical digital platforms for Bangladesh." />
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {services.slice(0, 6).map((service, index) => (
+              {serviceDetails.map((service, index) => (
                 <ServiceCard key={service.title} service={service} delay={index * 0.04} />
               ))}
             </div>
