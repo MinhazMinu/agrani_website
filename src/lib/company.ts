@@ -25,6 +25,7 @@ import {
   BusFront,
   Bot,
   Headset,
+  Globe2
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -125,13 +126,16 @@ export const serviceDetails = [
     ],
   },
   {
-    title: "IT/Technology Consultancy",
-    icon: BrainCircuit,
+    title: "Technology Oriented Consultancy",
+    icon: Cpu,
     items: [
-      "Strategic IT Roadmaps",
-      "Digital Transformation Planning",
-      "Technology Feasibility Studies",
-      "System Audit & Optimization",
+        "Strategy & Governance IT Strategy & Digital Transformation",
+        "Infrastructure & Cloud Services - Cloud Advisory & Migration",
+        "Software & Product Engineering - Custom Software Development Consulting",
+        "Data, Analytics, & Artificial Intelligence - Data Strategy & Governance",
+        "Cybersecurity & Trust - Security Assessments & Penetration Testing",
+        "Enterprise Business Applications - ERP Consulting for SAP, Oracle, Microsoft Dynamics, and CRM Consulting",
+        "Specialized & Emerging Tech Consulting - IoT Consulting",
     ],
   },
   {
@@ -225,18 +229,22 @@ export const serviceDetails = [
     ],
   },
   {
-    title: "Technology Based Consultancy",
-    icon: Cpu,
-    items: [
-        "Strategy & Governance IT Strategy & Digital Transformation",
-        "Infrastructure & Cloud Services - Cloud Advisory & Migration",
-        "Software & Product Engineering - Custom Software Development Consulting",
-        "Data, Analytics, & Artificial Intelligence - Data Strategy & Governance",
-        "Cybersecurity & Trust - Security Assessments & Penetration Testing",
-        "Enterprise Business Applications - ERP Consulting for SAP, Oracle, Microsoft Dynamics, and CRM Consulting",
-        "Specialized & Emerging Tech Consulting - IoT Consulting",
-    ],
-  },
+  title: "Offshore IT Services",
+  icon: Globe2,
+  items: [
+    "Software Development",
+    "Application Maintenance & Support",
+    "Quality Assurance (QA) & Testing",
+    "Infrastructure & IT Operations",
+    "Cloud Services",
+    "Cybersecurity Services",
+    "Data & Analytics",
+    "Artificial Intelligence & Machine Learning",
+    "UI/UX Design",
+    "Business Process Outsourcing (IT-Related)",
+  ],
+},
+
 ];
 
 
