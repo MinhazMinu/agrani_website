@@ -8,8 +8,17 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navItems } from "@/lib/company";
 
+function normalizePath(path: string) {
+  if (path === "/") {
+    return path;
+  }
+
+  return path.replace(/\/+$/, "");
+}
+
 export function Navbar() {
   const pathname = usePathname();
+  const currentPath = normalizePath(pathname);
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,7 +30,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => {
-            const active = pathname === item.href;
+            const active = currentPath === normalizePath(item.href);
             return (
               <Link
                 key={item.href}
@@ -69,7 +78,7 @@ export function Navbar() {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className={`rounded-xl px-4 py-3 text-sm font-semibold ${
-                    pathname === item.href ? "bg-brand-orange text-white" : "text-neutral-800 hover:bg-neutral-100"
+                    currentPath === normalizePath(item.href) ? "bg-brand-orange text-white" : "text-neutral-800 hover:bg-neutral-100"
                   }`}
                 >
                   {item.label}

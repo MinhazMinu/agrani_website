@@ -21,6 +21,16 @@ export const metadata: Metadata = {
   },
   description:
     "Agrani Technologies delivers software, cloud, cybersecurity, managed IT, and e-governance solutions across Bangladesh.",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.jpeg",
+        type: "image/jpeg",
+      },
+    ],
+    shortcut: "/favicon.jpeg",
+    apple: "/favicon.jpeg",
+  },
 };
 
 export default function RootLayout({

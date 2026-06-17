@@ -21,10 +21,8 @@ export function ContactForm() {
   const [captcha, setCaptcha] = useState<CaptchaChallenge>({ left: 4, right: 7 });
   const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [captchaError, setCaptchaError] = useState("");
-  const [isSending, setIsSending] = useState(false);
-  const [sendError, setSendError] = useState("");
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const expectedAnswer = captcha.left + captcha.right;
@@ -32,50 +30,17 @@ export function ContactForm() {
 
     if (providedAnswer !== expectedAnswer) {
       setSubmitted(false);
-      setSendError("");
       setCaptchaError("The CAPTCHA answer is incorrect. Please try the new question.");
       setCaptchaAnswer("");
       setCaptcha(createCaptchaChallenge());
       return;
     }
 
-    const formData = new FormData(form);
-
     setCaptchaError("");
-    setSendError("");
-    setSubmitted(false);
-    setIsSending(true);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          subject: formData.get("subject"),
-          message: formData.get("message"),
-        }),
-      });
-      const result = (await response.json().catch(() => null)) as { error?: string } | null;
-
-      if (!response.ok) {
-        throw new Error(result?.error ?? "Could not send your message. Please try again later.");
-      }
-
-      setSubmitted(true);
-      form.reset();
-      setCaptchaAnswer("");
-      setCaptcha(createCaptchaChallenge());
-    } catch (error) {
-      setSendError(error instanceof Error ? error.message : "Could not send your message. Please try again later.");
-      setCaptchaAnswer("");
-      setCaptcha(createCaptchaChallenge());
-    } finally {
-      setIsSending(false);
-    }
+    setSubmitted(true);
+    form.reset();
+    setCaptchaAnswer("");
+    setCaptcha(createCaptchaChallenge());
   }
 
   return (
@@ -110,26 +75,21 @@ export function ContactForm() {
           className="rounded-lg border border-neutral-200 px-4 py-3 outline-none transition focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10"
         />
       </label>
-      <button type="submit" disabled={isSending} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-orange-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto">
-        {isSending ? "Sending..." : "Send Message"} <Send size={18} />
+      <button type="submit" className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-orange-dark sm:w-auto">
+        Send Message <Send size={18} />
       </button>
       {captchaError ? (
         <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-800">
           {captchaError}
         </p>
-      ) : sendError ? (
-        <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-800">
-          {sendError} You can also email us directly at{" "}
-          <a className="underline" href={`mailto:${company.email}`}>{company.email}</a>.
-        </p>
       ) : submitted ? (
         <p className="mt-4 rounded-lg bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">
-          Thank you. Your message has been sent. We will get back to you soon.
+          Thank you. Your message has been received. Please email us directly if you need a faster response.
         </p>
       ) : (
         <p className="mt-4 text-sm text-neutral-500">
-          {/* Prefer email? Use the mailto fallback:{" "} */}
-          {/* <a className="font-semibold text-brand-cyan underline" href={`mailto:${company.email}`}>{company.email}</a>. */}
+          Prefer email? Contact us at{" "}
+          <a className="font-semibold text-brand-cyan underline" href={`mailto:${company.email}`}>{company.email}</a>.
         </p>
       )}
     </form>
